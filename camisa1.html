@@ -13,65 +13,165 @@
         .navbar-brand, .navbar-nav .nav-link {
             color: black !important;
         }
+
+        .product-info {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .product-info h1 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        .product-info h2 {
+            font-size: 28px;
+            color: #00aa17;
+        }
+
+        .product-info p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .action-buttons input {
+            background-color: rgb(25, 126, 16);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .freight-calculator {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: 30px auto;
+        }
+
+        .freight-calculator input[type="text"] {
+            padding: 8px;
+            width: 70%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .freight-calculator button {
+            padding: 8px 15px;
+            background-color: #601d9e;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .freight-calculator button:hover {
+            background-color: #5f006b;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .product-info h1 {
+                font-size: 28px;
+            }
+            .product-info h2 {
+                font-size: 22px;
+            }
+            .freight-calculator {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Logo</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="pagina1.html">Início</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Produtos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contato</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                    <button class="btn btn-outline-dark" type="submit">Buscar</button>
-                </form>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div>
-            <img src="Imagens/sjs.jpg" alt="presente">
-            <h1>TL$ LUST</h1>
-            <h2>R$ 149,90</h2>
-            <p>Descrição:</p>
-            <p>TL$ Lust é uma camiseta que mistura tudo que você mais deseja!</p>
-            <p>Conforto e prazer, obtenha a sorte de vestir essa camiseta exclusiva</p>
-            <p>da TL$ por apenas R$149,90, muito melhor que a sua alma!</p>
-            <p>
-                <input type="button" value="ADICIONAR AO CARRINHO" style="background-color: rgb(117, 0, 128); color: white; margin-left: 260px;" onclick="window.location.href='carrinho.html';">
-            </p>
-            <p>
-                <input type="button" value="COMPRAR" style="background-color: rgb(117, 0, 128); color: white; margin-left: 380px;" onclick="window.location.href='pagamento.html';">
-            </p>
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <img src="imagens/logo.png" height="100px" alt="Logo">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="pagina1.html">Início</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Produtos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="camisas.html">Camisas</a></li>
+                        <li><a class="dropdown-item" href="blusas.html">Blusas</a></li>
+                        <li><a class="dropdown-item" href="calcas.html">Calças</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contato</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                <button class="btn btn-outline-dark" type="submit">Buscar</button>
+            </form>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html"><i class="fas fa-user"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
+
+<div class="product-info">
+    <img src="Imagens/sjs.jpg" height="450px" alt="presente">
+    <h1>TL$ Lucky</h1>
+    <h2>R$ 149,90</h2>
+    <p>Descrição:</p>
+    <p>TL$ Lust é uma camiseta que mistura tudo que você mais deseja!</p>
+    <p>Conforto e prazer, obtenha a sorte de vestir essa camiseta exclusiva</p>
+    <p>da TL$ por apenas R$149,90, muito melhor que a sua alma!</p>
+    <div class="action-buttons">
+        <input type="button" value="ADICIONAR AO CARRINHO" onclick="window.location.href='carrinho.html';">
+        <input type="button" value="COMPRAR" onclick="window.location.href='pagamento.html';">
+    </div>
+</div>
+
+<!-- Caixa de Cálculo de Frete -->
+<div class="freight-calculator">
+    <h4>Calcule o Frete</h4>
+    <form id="freightForm">
+        <div class="mb-3">
+            <label for="cep" class="form-label">Digite seu CEP</label>
+            <input type="text" id="cep" class="form-control" placeholder="Exemplo: 12345-678" required>
+        </div>
+        <button type="submit">Calcular Frete</button>
+    </form>
+    <div id="freightResult" style="margin-top: 10px;"></div>
+</div>
+
+<script>
+    document.getElementById('freightForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let cep = document.getElementById('cep').value;
+        if (cep) {
+            // Simulando um cálculo de frete (pode ser substituído por uma API real)
+            let freightCost = (Math.random() * 50 + 10).toFixed(2);
+            document.getElementById('freightResult').innerHTML = `O valor do frete para o CEP ${cep} é R$ ${freightCost}`;
+        } else {
+            document.getElementById('freightResult').innerHTML = 'Por favor, insira um CEP válido.';
+        }
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

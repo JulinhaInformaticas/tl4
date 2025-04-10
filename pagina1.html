@@ -16,6 +16,27 @@
         .navbar-brand img {
             height: 80px; /* Ajuste o tamanho da imagem conforme necessário */
         }
+        
+        .footer {
+    background-color: rgb(129, 3, 3); /* Cor de fundo do footer */
+    color: #fff; /* Cor do texto */
+    padding: 30px 0; /* Espaçamento no topo e embaixo */
+    text-align: center; /* Centraliza o conteúdo */
+    font-size: 14px; /* Tamanho da fonte */
+    width: 100%; /* Faz o footer ocupar toda a largura da tela */
+    position: relative;
+    bottom: 0; /* Garante que o footer esteja na parte inferior da tela */
+}
+
+.footer a {
+    color: #fff; /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Sublinha os links quando passar o mouse */
+}
+
     </style>
 </head>
 <body>
@@ -78,14 +99,14 @@
             <a href="beatle.html"><img src="imagens/kkl.jpg" class="d-block mx-auto" style="width: 100%; height: auto;" alt="camisa1"></a>
         </div>
         <div class="carousel-item">
-            <a href="tiger.html"><img src="imagens/don.jpg" class="d-block mx-auto" style="width: 100%; height: auto;" alt="tg"></a>
+            <a href="tiger.html"><img src="imagens/tigkf.jpg" class="d-block mx-auto" style="width: 100%; height: auto;" alt="tg"></a>
         </div>
     </div>
 </div>
    
 
 
-<div class="row row-cols-1 row-cols-lg-3 align-items-center">
+<div class="row row-cols-1 row-cols-lg-3 g-2 align-items-center">
     <div class="col">
         <div class="card h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" 
              style="width: 250px; height: 180px; margin: 0 auto;" 
@@ -95,37 +116,54 @@
                  style="object-fit: cover; height: 100%; width: 100%; border-radius: 4px;">
             <div class="d-flex flex-column h-100 p-2 text-white text-shadow-1">
                 <h3 class="mt-auto mb-3 display-6 lh-1 fw-bold" style="color: purple;">TL$ Lust</h3>
-                <ul class="d-flex list-unstyled mt-auto"></ul>
             </div>
         </div>
     </div>
 
+    <div class="col">
+        <div class="card h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" 
+             style="width: 250px; height: 180px; margin: 0 auto;" 
+             onclick="window.location.href='Amor.html';" 
+             role="button">
+            <img src="imagens/amor.jpg" alt="Image" class="card-img-top" 
+                 style="object-fit: cover; height: 100%; width: 100%; border-radius: 4px;">
+            <div class="d-flex flex-column h-100 p-2 text-white text-shadow-1">
+                <h3 class="mt-auto mb-3 display-6 lh-1 fw-bold" style="color: rgb(128, 0, 0);">TL$ Amor</h3>
+            </div>
+        </div>
+    </div>
 
-<div class="col">
-    <div class="card h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" 
-         style="width: 250px; height: 180px; margin: 0 auto;" 
-         onclick="window.location.href='Amor.html';" 
-         role="button">
-        <img src="imagens/amor.jpg" alt="Image" class="card-img-top" 
-             style="object-fit: cover; height: 100%; width: 100%; border-radius: 4px;">
-        <div class="d-flex flex-column h-100 p-2 text-white text-shadow-1">
-            <h3 class="mt-auto mb-3 display-6 lh-1 fw-bold" style="color: rgb(128, 0, 0);">TL$ Amor</h3>
-            <ul class="d-flex list-unstyled mt-auto"></ul>
+    <div class="col">
+        <div class="card h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" 
+             style="width: 250px; height: 180px; margin: 0 auto;" 
+             onclick="window.location.href='Lucky.html';" 
+             role="button">
+            <img src="imagens/green.jpg" alt="Image" class="card-img-top" 
+                 style="object-fit: cover; height: 100%; width: 100%; border-radius: 4px;">
+            <div class="d-flex flex-column h-100 p-2 text-white text-shadow-1">
+                <h3 class="mt-auto mb-3 display-6 lh-1 fw-bold" style="color: rgb(10, 107, 70);">TL$ Lucky</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" 
+             style="width: 250px; height: 180px; margin: 0 auto;" 
+             onclick="window.location.href='pump.html';" 
+             role="button">
+            <img src="imagens/ilv.jpg" alt="Image" class="card-img-top" 
+                 style="object-fit: cover; height: 100%; width: 100%; border-radius: 4px;">
+            <div class="d-flex flex-column h-100 p-2 text-white text-shadow-1">
+                <h3 class="mt-auto mb-3 display-6 lh-1 fw-bold" style="color: rgb(255, 153, 0);">TL$ Pump</h3>
+            </div>
         </div>
     </div>
 </div>
-<div class="col">
-    <div class="card h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" 
-         style="width: 250px; height: 180px; margin: 0 auto;" 
-         onclick="window.location.href='Lucky.html';" 
-         role="button">
-        <img src="imagens/green.jpg" alt="Image" class="card-img-top" 
-             style="object-fit: cover; height: 100%; width: 100%; border-radius: 4px;">
-        <div class="d-flex flex-column h-100 p-2 text-white text-shadow-1">
-            <h3 class="mt-auto mb-3 display-6 lh-1 fw-bold" style="color: rgb(10, 107, 70);">TL$ Lucky</h3>
-            <ul class="d-flex list-unstyled mt-auto"></ul>
-        </div>
-    </div>
-</div>
+
+<footer class="footer">
+    <p>&copy; 2025 TL$4. Todos os direitos reservados.</p>
+    <p><a href="termos.html">Termos de Serviço</a> | <a href="privacidade.html">Política de Privacidade</a></p>
+</footer>
+
 </body>
 </html>
