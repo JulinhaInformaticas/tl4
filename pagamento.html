@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Centralizado</title>
+    <title>Finalizar Compra</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -24,71 +24,90 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 30px;
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
         }
 
         .form-container h2 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #333;
+        }
+
+        .form-label {
+            font-weight: bold;
         }
 
         .btn {
             background-color: red;
             color: white;
+            width: 100%;
         }
 
         .btn:hover {
-            background-color: red;
+            background-color: darkred;
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        .form-icon {
+            margin-right: 8px;
+            color: red;
         }
     </style>
 </head>
 <body>
 
 <div class="form-container">
-    <h2>Finalizar compra</h2>
-    <form action="">
+    <h2><i class="fas fa-shopping-cart form-icon"></i>Finalizar Compra</h2>
+    <form onsubmit="handlePaymentRedirect(event)">
         <div class="mb-3">
-            <label for="nome" class="form-label">Nome:</label>
-            <input class="form-control" type="text" name="nome" id="nome">
+            <label for="nome" class="form-label"><i class="fas fa-user form-icon"></i>Nome:</label>
+            <input class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome completo">
         </div>
         <div class="mb-3">
-            <label for="telefone" class="form-label">CPF:</label>
-            <input class="form-control" type="tel" name="telefone" id="telefone">
+            <label for="cpf" class="form-label"><i class="fas fa-id-card form-icon"></i>CPF:</label>
+            <input class="form-control" type="text" name="cpf" id="cpf" placeholder="000.000.000-00">
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label">CEP:</label>
-            <input class="form-control" type="email" name="email" id="email">
+            <label for="cep" class="form-label"><i class="fas fa-map-pin form-icon"></i>CEP:</label>
+            <input class="form-control" type="text" name="cep" id="cep" placeholder="00000-000">
         </div>
         <div class="mb-3">
-            <label for="endereço" class="form-label">Endereço:</label>
-            <input class="form-control" type="text" name="endereço" id="endereço">
+            <label for="endereco" class="form-label"><i class="fas fa-home form-icon"></i>Endereço:</label>
+            <input class="form-control" type="text" name="endereco" id="endereco" placeholder="Rua, número, bairro">
         </div>
         <div class="mb-3">
-            <label for="password" class="form-label">Senha:</label>
-            <input class="form-control" type="password" name="password" id="password">
+            <label for="password" class="form-label"><i class="fas fa-lock form-icon"></i>Senha:</label>
+            <input class="form-control" type="password" name="password" id="password" placeholder="Crie uma senha">
         </div>
-        <div class="mb-3">
-            <label for="payment-method" class="form-label">Método de pagamento:</label>
-<div>
-    <input type="radio" id="cartao-credito" name="payment-method" value="Cartão de Crédito" onclick="redirectToPage('pcc.html')">
-    <label for="cartao-credito">Cartão de Crédito</label>
-</div>
-<div>
-    <input type="radio" id="cartao-debito" name="payment-method" value="Cartão de Débito" onclick="redirectToPage('pcd.html')">
-    <label for="cartao-debito">Cartão de Débito</label>
-</div>
-<div>
-    <input type="radio" id="pix" name="payment-method" value="Pix" onclick="redirectToPage('pix.html')">
-    <label for="pix">Pix</label>
+
+        <div class="mb-4">
+            <label for="payment-method" class="form-label"><i class="fas fa-credit-card form-icon"></i>Método de Pagamento:</label>
+            <select class="form-select" id="payment-method" name="payment-method" required>
+                <option value="">Selecione uma opção</option>
+                <option value="pcc.html">Cartão de Crédito</option>
+                <option value="pcd.html">Cartão de Débito</option>
+                <option value="pix.html">Pix</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn">Finalizar Compra</button>
+    </form>
 </div>
 
 <script>
-function redirectToPage(pageUrl) {
-    window.location.href = pageUrl;
-}
+    function handlePaymentRedirect(event) {
+        event.preventDefault(); // Impede o envio do formulário padrão
+        const selectedOption = document.getElementById('payment-method').value;
+        if (selectedOption) {
+            window.location.href = selectedOption;
+        } else {
+            alert("Por favor, selecione um método de pagamento.");
+        }
+    }
 </script>
-    </form>
-</div>
+
 </body>
 </html>

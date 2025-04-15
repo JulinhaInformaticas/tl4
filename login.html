@@ -27,11 +27,11 @@
         }
         .login-container input {
             width: 95%;
-            padding: 12px; /* Ajustado para maior conforto */
+            padding: 12px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
-            border-radius: 6px; /* Alterei de 4px para 6px para suavizar */
-            font-size: 16px; /* Texto mais legível */
+            border-radius: 6px;
+            font-size: 16px;
         }
         .login-container button {
             width: 100%;
@@ -39,7 +39,7 @@
             background-color: #FF0000;
             color: white;
             border: none;
-            border-radius: 6px; /* Padronizei com as caixas de texto */
+            border-radius: 6px;
             cursor: pointer;
             font-size: 16px;
         }
@@ -62,21 +62,33 @@
 <body>
     <div class="login-container">
         <h1>Login</h1>
-        <form>
-            <input type="text" placeholder="Usuário" required>
-            <input type="password" placeholder="Senha" required>
+        <form onsubmit="return verificarLogin(event)">
+            <input type="text" id="usuario" placeholder="Usuário" required>
+            <input type="password" id="senha" placeholder="Senha" required>
             <button type="submit">Entrar</button>
         </form>
-        <script>
-            function mensagem() {
-                alert("Fique á vontade!");
-                window.location.href = "pagina1.html"; // Substitua "paginaDestino.html" pela URL desejada.
-            }
-        </script>
-       
+
         <div class="register-option">
             <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
         </div>
     </div>
+
+    <script>
+        function verificarLogin(event) {
+            event.preventDefault();
+
+            const usuario = document.getElementById("usuario").value;
+            const senha = document.getElementById("senha").value;
+
+            if (usuario === "admin" && senha === "admin") {
+                alert("Login bem-sucedido. Redirecionando...");
+                window.location.href = "adm.html"; // Altere para a página desejada
+            } else {
+                alert("Usuário ou senha incorretos.");
+            }
+
+            return false;
+        }
+    </script>
 </body>
 </html>
