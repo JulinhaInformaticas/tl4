@@ -9,8 +9,9 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
+      margin: 0;
+      padding: 0;
       background-color: #f8f9fa;
-      padding-top: 80px;
     }
 
     .report-container {
@@ -20,6 +21,7 @@
       padding: 30px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       border-radius: 12px;
+      margin-top: 20px;
     }
 
     h1 {
@@ -75,20 +77,81 @@
       font-size: 1.2rem;
       color: #212529;
     }
+
+    .navbar {
+      background-color: red;
+    }
+
+    .navbar-brand, .navbar-nav .nav-link {
+      color: black !important;
+    }
+
+    .navbar-brand img {
+      height: 80px;
+    }
   </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">Relatório de Vendas</a>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="imagens/logo.png" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="adm.html">Início</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Produtos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="camisas.html">Camisas</a></li>
+            <li><a class="dropdown-item" href="blusas.html">Blusas</a></li>
+            <li><a class="dropdown-item" href="calcas.html">Calças</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contato.html">Contato</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+        <button class="btn btn-outline-dark" type="submit">Buscar</button>
+      </form>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="login.html"><i class="fas fa-user"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
 <!-- Conteúdo -->
 <div class="report-container">
   <h1 class="text-center mb-4">Relatório de Vendas</h1>
+
+  <!-- Filtro de Período -->
+  <div class="mb-4">
+    <label for="periodoSelect" class="form-label">Selecionar Período:</label>
+    <select id="periodoSelect" class="form-select">
+      <option value="diario">Diário</option>
+      <option value="semanal">Semanal</option>
+      <option value="mensal" selected>Mensal</option>
+    </select>
+  </div>
 
   <!-- Cards de Indicadores -->
   <div class="row mb-4">
@@ -99,7 +162,7 @@
         </div>
         <div class="info-text">
           <h6>Lucro de Vendas</h6>
-          <p>R$ 76.267,95 <small class="text-success">(72.98%)</small></p>
+          <p id="lucroVendas">R$ 76.267,95 <small class="text-success">(72.98%)</small></p>
         </div>
       </div>
     </div>
@@ -110,7 +173,7 @@
         </div>
         <div class="info-text">
           <h6>Receita Total</h6>
-          <p>R$ 104.500,00</p>
+          <p id="receitaTotal">R$ 104.500,00</p>
         </div>
       </div>
     </div>
@@ -121,16 +184,31 @@
         </div>
         <div class="info-text">
           <h6>Despesas</h6>
-          <p>R$ 28.232,05</p>
+          <p id="despesas">R$ 28.232,05</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Gráfico -->
-  <canvas id="vendasChart" style="max-height: 400px;"></canvas>
+  <!-- Gráfico de Vendas -->
+  <div class="mb-5">
+    <h4>Vendas por Produto</h4>
+    <canvas id="vendasChart" style="max-height: 400px;"></canvas>
+  </div>
 
-  <!-- Dados (sem texto explicativo) -->
+  <!-- Gráfico de Margem de Lucro -->
+  <div class="mb-5">
+    <h4>Margem de Lucro</h4>
+    <canvas id="margemLucroChart" style="max-height: 400px;"></canvas>
+  </div>
+
+  <!-- Gráfico de Clientes que Mais Compraram -->
+  <div class="mb-5">
+    <h4>Clientes que Mais Compraram</h4>
+    <canvas id="clientesChart" style="max-height: 400px;"></canvas>
+  </div>
+
+  <!-- Dados Resumidos -->
   <div class="mt-5">
     <h4>Dados Resumidos</h4>
     <ul>
@@ -149,25 +227,30 @@
   <p><a href="termos.html">Termos de Serviço</a> | <a href="privacidade.html">Política de Privacidade</a></p>
 </footer>
 
-<!-- Script do Gráfico -->
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  const vendas = [120, 150, 200, 95];
-  const max = Math.max(...vendas);
-  const tonsDeVermelho = vendas.map(valor => {
-    const intensidade = Math.round((valor / max) * 200 + 55);
-    return `rgb(${intensidade}, 0, 0)`;
-  });
-
-  const ctx = document.getElementById('vendasChart').getContext('2d');
-  const vendasChart = new Chart(ctx, {
+  // Gráfico de Vendas por Produto
+  const vendasCtx = document.getElementById('vendasChart').getContext('2d');
+  const vendasChart = new Chart(vendasCtx, {
     type: 'bar',
     data: {
-      labels: ['Lust', 'Amor', 'Lucky', 'Pump'],
+      labels: ['TL$ Lucky', 'TL$ Amor', 'TL$ Lust', 'TL$ Pump'],
       datasets: [{
-        label: 'Vendas (Unidades)',
-        data: vendas,
-        backgroundColor: tonsDeVermelho,
-        borderColor: tonsDeVermelho,
+        label: 'Unidades Vendidas',
+        data: [200, 150, 120, 95],
+        backgroundColor: [
+          'rgba(red)',
+          'rgba(54, 162, 235, 0.7)',
+          'rgba(255, 206, 86, 0.7)',
+          'rgba(75, 192, 192, 0.7)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)'
+        ],
         borderWidth: 1
       }]
     },
@@ -175,17 +258,180 @@
       responsive: true,
       scales: {
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Unidades Vendidas'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Produtos'
+          }
         }
       },
       plugins: {
         legend: {
-          display: false
+          position: 'top',
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return `${context.dataset.label}: ${context.raw} unidades`;
+            }
+          }
         }
       }
     }
   });
-</script>
 
+  // Gráfico de Margem de Lucro
+  const margemLucroCtx = document.getElementById('margemLucroChart').getContext('2d');
+  const margemLucroChart = new Chart(margemLucroCtx, {
+    type: 'line',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+      datasets: [{
+        label: 'Margem de Lucro (%)',
+        data: [65, 59, 70, 72, 73],
+        fill: false,
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        tension: 0.4,
+        pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+        pointRadius: 5,
+        pointHoverRadius: 7
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: false,
+          min: 50,
+          max: 80,
+          title: {
+            display: true,
+            text: 'Margem de Lucro (%)'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Meses'
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return `${context.dataset.label}: ${context.raw}%`;
+            }
+          }
+        }
+      }
+    }
+  });
+
+  // Gráfico de Clientes que Mais Compraram
+  const clientesCtx = document.getElementById('clientesChart').getContext('2d');
+  const clientesChart = new Chart(clientesCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Maria Silva', 'João Oliveira', 'Ana Souza', 'Carlos Pereira', 'Outros'],
+      datasets: [{
+        label: 'Valor Gasto (R$)',
+        data: [12500, 9800, 8700, 7600, 32000],
+        backgroundColor: [
+          'rgba(255, 102, 102, 0.7)',
+          'rgba(54, 162, 235, 0.7)',
+          'rgba(255, 206, 86, 0.7)',
+          'rgba(75, 192, 192, 0.7)',
+          'rgba(153, 102, 255, 0.7)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'right',
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const label = context.label || '';
+              const value = context.raw || 0;
+              const total = context.dataset.data.reduce((a, b) => a + b, 0);
+              const percentage = Math.round((value / total) * 100);
+              return `${label}: R$ ${value.toLocaleString()} (${percentage}%)`;
+            }
+          }
+        }
+      }
+    }
+  });
+
+  // Atualizar dados quando o período for alterado
+  document.getElementById('periodoSelect').addEventListener('change', function() {
+    // Simulação de atualização de dados
+    const periodo = this.value;
+    
+    if (periodo === 'diario') {
+      // Atualizar para dados diários
+      document.getElementById('lucroVendas').innerHTML = 'R$ 2.540,00 <small class="text-success">(71.5%)</small>';
+      document.getElementById('receitaTotal').textContent = 'R$ 3.550,00';
+      document.getElementById('despesas').textContent = 'R$ 1.010,00';
+      
+      // Atualizar gráficos
+      vendasChart.data.datasets[0].data = [15, 12, 8, 10];
+      margemLucroChart.data.datasets[0].data = [68, 72, 70, 75, 71, 69, 73];
+      margemLucroChart.data.labels = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
+      clientesChart.data.datasets[0].data = [850, 650, 550, 450, 2000];
+      
+    } else if (periodo === 'semanal') {
+      // Atualizar para dados semanais
+      document.getElementById('lucroVendas').innerHTML = 'R$ 18.200,00 <small class="text-success">(72.3%)</small>';
+      document.getElementById('receitaTotal').textContent = 'R$ 25.200,00';
+      document.getElementById('despesas').textContent = 'R$ 7.000,00';
+      
+      // Atualizar gráficos
+      vendasChart.data.datasets[0].data = [60, 45, 35, 30];
+      margemLucroChart.data.datasets[0].data = [70, 72, 71, 73];
+      margemLucroChart.data.labels = ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'];
+      clientesChart.data.datasets[0].data = [3500, 2800, 2200, 1800, 8200];
+      
+    } else {
+      // Atualizar para dados mensais (padrão)
+      document.getElementById('lucroVendas').innerHTML = 'R$ 76.267,95 <small class="text-success">(72.98%)</small>';
+      document.getElementById('receitaTotal').textContent = 'R$ 104.500,00';
+      document.getElementById('despesas').textContent = 'R$ 28.232,05';
+      
+      // Atualizar gráficos
+      vendasChart.data.datasets[0].data = [200, 150, 120, 95];
+      margemLucroChart.data.datasets[0].data = [65, 59, 70, 72, 73];
+      margemLucroChart.data.labels = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai'];
+      clientesChart.data.datasets[0].data = [12500, 9800, 8700, 7600, 32000];
+    }
+    
+    // Atualizar todos os gráficos
+    vendasChart.update();
+    margemLucroChart.update();
+    clientesChart.update();
+  });
+</script>
 </body>
 </html>

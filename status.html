@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status de Pedidos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .navbar {
+            background-color: red;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand img {
+            height: 60px;
+        }
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+        .container {
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .card-header {
+            background-color: #8B0000;
+            color: white;
+            border-radius: 10px 10px 0 0 !important;
+            font-weight: 600;
+        }
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .status-aguardando {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .status-enviado {
+            background-color: #cce5ff;
+            color: #004085;
+        }
+        .status-entregue {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status-cancelado {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .search-box {
+            margin-bottom: 20px;
+        }
+        .pagination {
+            justify-content: center;
+        }
+        .table-responsive {
+            overflow-x: auto;
+        }
+        .action-btn {
+            padding: 3px 8px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="imagens/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="adm.html">Início</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Produtos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="camisas.html">Camisas</a></li>
+                            <li><a class="dropdown-item" href="blusas.html">Blusas</a></li>
+                            <li><a class="dropdown-item" href="calcas.html">Calças</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="pedidos.html">Pedidos</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-dark" type="submit">Buscar</button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"><i class="fas fa-user"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span><i class="fas fa-clipboard-list me-2"></i>Status dos Pedidos</span>
+                <button class="btn btn-sm btn-light" onclick="location.reload()">
+                    <i class="fas fa-sync-alt me-1"></i>Atualizar
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-6 search-box">
+                        <div class="input-group">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Pesquisar pedido..." onkeyup="filterOrders()">
+                            <button class="btn btn-outline-secondary" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-filter me-1"></i>Filtrar
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" onclick="filterByStatus('all')">Todos</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#" onclick="filterByStatus('Aguardando Pagamento')">Aguardando Pagamento</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="filterByStatus('Aguardando Envio')">Aguardando Envio</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="filterByStatus('Pedido Enviado')">Pedido Enviado</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="filterByStatus('Entregue')">Entregue</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="filterByStatus('Cancelado')">Cancelado</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover" id="ordersTable">
+                        <thead class="table-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Produto</th>
+                                <th>Data</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Os pedidos serão inseridos aqui via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <nav aria-label="Page navigation">
+                    <ul class="pagination mt-3" id="pagination">
+                        <!-- Paginação será inserida aqui via JavaScript -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Detalhes -->
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Detalhes do Pedido</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="orderDetails">
+                    <!-- Detalhes do pedido serão inseridos aqui -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" onclick="printOrder()">
+                        <i class="fas fa-print me-1"></i>Imprimir
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Dados dos pedidos (ampliados com mais informações)
+        const pedidos = [
+            { 
+                id: 1, 
+                cliente: "João Silva", 
+                produto: "Camisa Azul", 
+                status: "Aguardando Pagamento",
+                data: "15/05/2023",
+                valor: "R$ 89,90",
+                detalhes: {
+                    endereco: "Rua das Flores, 123 - São Paulo/SP",
+                    pagamento: "Cartão de Crédito (final 1234)",
+                    transportadora: "Aguardando confirmação",
+                    codigoRastreio: "Não disponível"
+                }
+            },
+            { 
+                id: 2, 
+                cliente: "Maria Santos", 
+                produto: "Calça Jeans", 
+                status: "Aguardando Envio",
+                data: "16/05/2023",
+                valor: "R$ 129,90",
+                detalhes: {
+                    endereco: "Av. Brasil, 456 - Rio de Janeiro/RJ",
+                    pagamento: "PIX (confirmado)",
+                    transportadora: "Aguardando postagem",
+                    codigoRastreio: "Não disponível"
+                }
+            },
+            { 
+                id: 3, 
+                cliente: "Carlos Oliveira", 
+                produto: "Tênis Esportivo", 
+                status: "Pedido Enviado",
+                data: "10/05/2023",
+                valor: "R$ 199,90",
+                detalhes: {
+                    endereco: "Rua dos Pinheiros, 789 - Belo Horizonte/MG",
+                    pagamento: "Boleto (pago)",
+                    transportadora: "Correios",
+                    codigoRastreio: "ABC123456789BR"
+                }
+            },
+            { 
+                id: 4, 
+                cliente: "Ana Pereira", 
+                produto: "Jaqueta de Couro", 
+                status: "Entregue",
+                data: "05/05/2023",
+                valor: "R$ 349,90",
+                detalhes: {
+                    endereco: "Av. Paulista, 1001 - São Paulo/SP",
+                    pagamento: "Cartão de Crédito (final 5678)",
+                    transportadora: "Loggi",
+                    codigoRastreio: "XYZ987654321BR",
+                    dataEntrega: "10/05/2023"
+                }
+            },
+            { 
+                id: 5, 
+                cliente: "Luiz Costa", 
+                produto: "Vestido Floral", 
+                status: "Cancelado",
+                data: "12/05/2023",
+                valor: "R$ 119,90",
+                detalhes: {
+                    endereco: "Rua das Palmeiras, 55 - Curitiba/PR",
+                    pagamento: "Cartão de Crédito (não aprovado)",
+                    motivoCancelamento: "Pagamento não aprovado"
+                }
+            },
+            { 
+                id: 6, 
+                cliente: "Fernanda Lima", 
+                produto: "Blusa de Frio", 
+                status: "Pedido Enviado",
+                data: "18/05/2023",
+                valor: "R$ 79,90",
+                detalhes: {
+                    endereco: "Rua das Acácias, 33 - Porto Alegre/RS",
+                    pagamento: "PIX (confirmado)",
+                    transportadora: "JadLog",
+                    codigoRastreio: "JDL123456789BR"
+                }
+            },
+            { 
+                id: 7, 
+                cliente: "Ricardo Almeida", 
+                produto: "Shorts Esportivo", 
+                status: "Aguardando Pagamento",
+                data: "20/05/2023",
+                valor: "R$ 59,90",
+                detalhes: {
+                    endereco: "Av. Atlântica, 200 - Rio de Janeiro/RJ",
+                    pagamento: "Boleto (pendente)",
+                    transportadora: "Aguardando confirmação",
+                    codigoRastreio: "Não disponível"
+                }
+            }
+        ];
+
+        // Variáveis para paginação
+        let currentPage = 1;
+        const rowsPerPage = 5;
+
+        // Função para renderizar a tabela
+        function renderTable(page = 1, filteredOrders = pedidos) {
+            const tableBody = document.querySelector('#ordersTable tbody');
+            tableBody.innerHTML = '';
+            
+            currentPage = page;
+            const start = (page - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            const paginatedOrders = filteredOrders.slice(start, end);
+            
+            paginatedOrders.forEach(pedido => {
+                const statusClass = getStatusClass(pedido.status);
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${pedido.id}</td>
+                    <td>${pedido.cliente}</td>
+                    <td>${pedido.produto}</td>
+                    <td>${pedido.data}</td>
+                    <td>${pedido.valor}</td>
+                    <td><span class="status-badge ${statusClass}">${pedido.status}</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary action-btn" onclick="showOrderDetails(${pedido.id})">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary action-btn" onclick="editOrder(${pedido.id})">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+            
+            renderPagination(filteredOrders.length);
+        }
+
+        // Função para obter a classe CSS baseada no status
+        function getStatusClass(status) {
+            if (status.includes('Aguardando')) return 'status-aguardando';
+            if (status === 'Pedido Enviado') return 'status-enviado';
+            if (status === 'Entregue') return 'status-entregue';
+            if (status === 'Cancelado') return 'status-cancelado';
+            return '';
+        }
+
+        // Função para renderizar a paginação
+        function renderPagination(totalOrders) {
+            const pagination = document.querySelector('#pagination');
+            pagination.innerHTML = '';
+            
+            const pageCount = Math.ceil(totalOrders / rowsPerPage);
+            
+            if (pageCount <= 1) return;
+            
+            // Botão Anterior
+            const prevLi = document.createElement('li');
+            prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+            prevLi.innerHTML = `<a class="page-link" href="#" onclick="changePage(${currentPage - 1})">Anterior</a>`;
+            pagination.appendChild(prevLi);
+            
+            // Números das páginas
+            for (let i = 1; i <= pageCount; i++) {
+                const li = document.createElement('li');
+                li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                li.innerHTML = `<a class="page-link" href="#" onclick="changePage(${i})">${i}</a>`;
+                pagination.appendChild(li);
+            }
+            
+            // Botão Próximo
+            const nextLi = document.createElement('li');
+            nextLi.className = `page-item ${currentPage === pageCount ? 'disabled' : ''}`;
+            nextLi.innerHTML = `<a class="page-link" href="#" onclick="changePage(${currentPage + 1})">Próximo</a>`;
+            pagination.appendChild(nextLi);
+        }
+
+        // Função para mudar de página
+        function changePage(page) {
+            renderTable(page);
+        }
+
+        // Função para filtrar pedidos por status
+        function filterByStatus(status) {
+            if (status === 'all') {
+                renderTable(1, pedidos);
+                return;
+            }
+            
+            const filtered = pedidos.filter(pedido => pedido.status === status);
+            renderTable(1, filtered);
+        }
+
+        // Função para filtrar pedidos por pesquisa
+        function filterOrders() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = pedidos.filter(pedido => 
+                pedido.id.toString().includes(searchTerm) ||
+                pedido.cliente.toLowerCase().includes(searchTerm) ||
+                pedido.produto.toLowerCase().includes(searchTerm) ||
+                pedido.status.toLowerCase().includes(searchTerm)
+            );
+            
+            renderTable(1, filtered);
+        }
+
+        // Função para mostrar detalhes do pedido em um modal
+        function showOrderDetails(orderId) {
+            const order = pedidos.find(p => p.id === orderId);
+            if (!order) return;
+            
+            const modalBody = document.getElementById('orderDetails');
+            
+            let detailsHTML = `
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6>Informações do Pedido</h6>
+                        <p><strong>ID:</strong> ${order.id}</p>
+                        <p><strong>Cliente:</strong> ${order.cliente}</p>
+                        <p><strong>Produto:</strong> ${order.produto}</p>
+                        <p><strong>Data:</strong> ${order.data}</p>
+                        <p><strong>Valor:</strong> ${order.valor}</p>
+                        <p><strong>Status:</strong> <span class="status-badge ${getStatusClass(order.status)}">${order.status}</span></p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Informações de Entrega</h6>
+                        <p><strong>Endereço:</strong> ${order.detalhes.endereco}</p>
+            `;
+            
+            if (order.detalhes.transportadora) {
+                detailsHTML += `<p><strong>Transportadora:</strong> ${order.detalhes.transportadora}</p>`;
+            }
+            
+            if (order.detalhes.codigoRastreio) {
+                detailsHTML += `<p><strong>Código de Rastreio:</strong> ${order.detalhes.codigoRastreio}</p>`;
+            }
+            
+            if (order.detalhes.dataEntrega) {
+                detailsHTML += `<p><strong>Data de Entrega:</strong> ${order.detalhes.dataEntrega}</p>`;
+            }
+            
+            detailsHTML += `
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Informações de Pagamento</h6>
+                        <p>${order.detalhes.pagamento}</p>
+            `;
+            
+            if (order.detalhes.motivoCancelamento) {
+                detailsHTML += `
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Motivo do Cancelamento</h6>
+                        <p>${order.detalhes.motivoCancelamento}</p>
+                `;
+            }
+            
+            detailsHTML += `
+                    </div>
+                </div>
+            `;
+            
+            modalBody.innerHTML = detailsHTML;
+            
+            // Mostrar o modal
+            const modal = new bootstrap.Modal(document.getElementById('orderModal'));
+            modal.show();
+        }
+
+        // Função para editar pedido (simulação)
+        function editOrder(orderId) {
+            alert(`Editar pedido ${orderId} - Esta funcionalidade seria implementada em uma versão completa.`);
+        }
+
+        // Função para imprimir pedido
+        function printOrder() {
+            window.print();
+        }
+
+        // Inicializar a tabela quando a página carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTable();
+        });
+    </script>
+</body>
+</html>
