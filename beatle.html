@@ -72,6 +72,34 @@
             background-color: #5f006b;
         }
 
+        .reviews-section {
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .review-rating {
+            color: #e83e3e;
+        }
+
         /* Mobile responsiveness */
         @media (max-width: 768px) {
             .product-info h1 {
@@ -155,6 +183,43 @@
         <button type="submit">Calcular Frete</button>
     </form>
     <div id="freightResult" style="margin-top: 10px;"></div>
+</div>
+
+<!-- Seção de Avaliações -->
+<div class="reviews-section">
+    <h3>Avaliações dos Clientes</h3>
+    
+    <div class="review">
+        <div class="review-header">
+            <span>João Silva</span>
+            <span class="review-rating">★★★★★</span>
+        </div>
+        <p>Comprei essa camisa e realmente transformou meu ódio em amor! O material é de ótima qualidade e o design é incrível. Recomendo muito!</p>
+    </div>
+    
+    <div class="review">
+        <div class="review-header">
+            <span>Maria Oliveira</span>
+            <span class="review-rating">★★★★☆</span>
+        </div>
+        <p>Adorei o conceito da camisa, mas achei o tecido um pouco grosso para o clima da minha cidade. Mesmo assim, estou satisfeita com a compra.</p>
+    </div>
+    
+    <div class="review">
+        <div class="review-header">
+            <span>Carlos Souza</span>
+            <span class="review-rating">★★★★★</span>
+        </div>
+        <p>Melhor compra que fiz esse ano! A camisa é exatamente como na foto e chegou antes do prazo. Já estou pensando em comprar outra!</p>
+    </div>
+    
+    <div class="review">
+        <div class="review-header">
+            <span>Ana Paula</span>
+            <span class="review-rating">★★★☆☆</span>
+        </div>
+        <p>Gostei do design, mas achei o preço um pouco salgado para o que oferece. O frete foi rápido e o atendimento foi bom.</p>
+    </div>
 </div>
 
 <script>
