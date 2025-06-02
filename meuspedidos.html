@@ -86,7 +86,7 @@
             color: #ffc107;
         }
         
-        #reviewModal textarea {
+        #reviewModal textarea, #reviewModal2 textarea {
             min-height: 100px;
         }
         
@@ -133,6 +133,33 @@
         
         .tracking-step.completed .step-date {
             color: #28a745;
+        }
+        
+        /* Novos estilos adicionados */
+        .order-actions .btn {
+            flex: 1;
+            white-space: nowrap;
+        }
+        
+        .order-product .text-danger {
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 576px) {
+            .order-actions {
+                flex-direction: column;
+            }
+            
+            .order-product {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .order-product img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -264,9 +291,43 @@
             </button>
         </div>
     </div>
+    
+    <!-- Pedido fora do prazo de devolução -->
+    <div class="order-card">
+        <div class="order-header">
+            <div>
+                <h5>Pedido #TL54321</h5>
+                <small class="text-muted">Realizado em: 20/04/2023</small>
+            </div>
+            <span class="order-status status-delivered">Entregue</span>
+        </div>
+        
+        <div class="order-product">
+            <img src="imagens/ilv.jpg" alt="TL$ Pump">
+            <div>
+                <h6>TL$ Pump</h6>
+                <p>Jaqueta bomber Pump TL$</p>
+                <p>Quantidade: 1</p>
+                <p>R$ 360,00</p>
+                <p class="text-danger"><i class="fas fa-exclamation-circle"></i> Entregue há mais de 7 dias</p>
+            </div>
+        </div>
+        
+        <div class="order-actions">
+            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#reviewModal2">
+                <i class="fas fa-star"></i> Avaliar produto
+            </button>
+            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#problemModal">
+                <i class="fas fa-exclamation-triangle"></i> Relatar Problema
+            </button>
+            <button class="btn btn-outline-secondary" onclick="contactSupport()">
+                <i class="fas fa-headset"></i> Falar com atendimento
+            </button>
+        </div>
+    </div>
 </div>
 
-<!-- Modal de Avaliação -->
+<!-- Modal de Avaliação (primeiro produto) -->
 <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -303,6 +364,91 @@
     </div>
 </div>
 
+<!-- Modal de Avaliação (terceiro produto) -->
+<div class="modal fade" id="reviewModal2" tabindex="-1" aria-labelledby="reviewModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reviewModalLabel2">Avaliar Produto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-3">
+                    <h6>TL$ Pump</h6>
+                    <img src="imagens/ilv.jpg" alt="TL$ Pump" width="100" class="mb-3">
+                </div>
+                
+                <div class="rating-stars text-center">
+                    <span class="star" data-rating="1"><i class="far fa-star"></i></span>
+                    <span class="star" data-rating="2"><i class="far fa-star"></i></span>
+                    <span class="star" data-rating="3"><i class="far fa-star"></i></span>
+                    <span class="star" data-rating="4"><i class="far fa-star"></i></span>
+                    <span class="star" data-rating="5"><i class="far fa-star"></i></span>
+                </div>
+                
+                <input type="hidden" id="productRating2" value="0">
+                
+                <div class="mb-3">
+                    <label for="reviewText2" class="form-label">Conte como foi sua experiência com o produto</label>
+                    <textarea class="form-control" id="reviewText2" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="submitReview2()">Enviar Avaliação</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Relatar Problema -->
+<div class="modal fade" id="problemModal" tabindex="-1" aria-labelledby="problemModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="problemModalLabel">Relatar Problema com o Produto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-warning">
+                    <i class="fas fa-info-circle"></i> Este pedido foi entregue há mais de 7 dias. De acordo com a legislação brasileira, o direito de arrependimento para compras online é de até 7 dias após o recebimento.
+                </div>
+                
+                <div class="text-center mb-3">
+                    <h6>TL$ Pump</h6>
+                    <img src="imagens/ilv.jpg" alt="TL$ Pump" width="100" class="mb-3">
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Tipo de Problema</label>
+                    <select class="form-select" id="problemType">
+                        <option value="">Selecione o tipo de problema</option>
+                        <option value="defeito">Produto com defeito</option>
+                        <option value="diferente">Produto diferente do anunciado</option>
+                        <option value="nao_funciona">Produto não funciona</option>
+                        <option value="outro">Outro problema</option>
+                    </select>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="problemDescription" class="form-label">Descreva detalhadamente o problema</label>
+                    <textarea class="form-control" id="problemDescription" rows="4" placeholder="Descreva com detalhes o problema encontrado no produto..."></textarea>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="problemPhotos" class="form-label">Anexar fotos (opcional)</label>
+                    <input type="file" class="form-control" id="problemPhotos" multiple accept="image/*">
+                    <small class="text-muted">Envie fotos que mostrem claramente o problema (máx. 3 fotos)</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="submitProblem()">Enviar Relato</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     // Função para abrir rastreamento (simulação)
     function openTracking(trackingCode) {
@@ -318,10 +464,11 @@
     function requestReturn() {
         window.location.href = 'trocadev.html';
     }
+    
     // Configuração das estrelas de avaliação
     document.addEventListener('DOMContentLoaded', function() {
-        const stars = document.querySelectorAll('.star');
-        
+        // Configura estrelas para o primeiro modal
+        const stars = document.querySelectorAll('#reviewModal .star');
         stars.forEach(star => {
             star.addEventListener('click', function() {
                 const rating = this.getAttribute('data-rating');
@@ -363,6 +510,50 @@
                 });
             });
         });
+        
+        // Configura estrelas para o segundo modal
+        const stars2 = document.querySelectorAll('#reviewModal2 .star');
+        stars2.forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = this.getAttribute('data-rating');
+                document.getElementById('productRating2').value = rating;
+                
+                // Atualiza visualização das estrelas
+                stars2.forEach((s, index) => {
+                    if (index < rating) {
+                        s.innerHTML = '<i class="fas fa-star"></i>';
+                        s.classList.add('active');
+                    } else {
+                        s.innerHTML = '<i class="far fa-star"></i>';
+                        s.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Efeito hover
+            star.addEventListener('mouseover', function() {
+                const rating = this.getAttribute('data-rating');
+                stars2.forEach((s, index) => {
+                    if (index < rating) {
+                        s.innerHTML = '<i class="fas fa-star"></i>';
+                    } else {
+                        s.innerHTML = '<i class="far fa-star"></i>';
+                    }
+                });
+            });
+            
+            // Remove efeito hover quando o mouse sai
+            star.addEventListener('mouseout', function() {
+                const currentRating = document.getElementById('productRating2').value;
+                stars2.forEach((s, index) => {
+                    if (index < currentRating) {
+                        s.innerHTML = '<i class="fas fa-star"></i>';
+                    } else {
+                        s.innerHTML = '<i class="far fa-star"></i>';
+                    }
+                });
+            });
+        });
     });
     
     // Função para enviar avaliação (simulação)
@@ -384,10 +575,61 @@
         // Limpa o formulário
         document.getElementById('productRating').value = 0;
         document.getElementById('reviewText').value = '';
-        document.querySelectorAll('.star').forEach(star => {
+        document.querySelectorAll('#reviewModal .star').forEach(star => {
             star.innerHTML = '<i class="far fa-star"></i>';
             star.classList.remove('active');
         });
+    }
+    
+    // Função para enviar avaliação do segundo produto (simulação)
+    function submitReview2() {
+        const rating = document.getElementById('productRating2').value;
+        const reviewText = document.getElementById('reviewText2').value;
+        
+        if (rating == 0) {
+            alert("Por favor, selecione uma avaliação com as estrelas.");
+            return;
+        }
+        
+        alert(`Obrigado por sua avaliação!\n\nAvaliação: ${rating} estrelas\nComentário: ${reviewText}\n\nEsta é uma simulação. Em um site real, esses dados seriam salvos no banco de dados.`);
+        
+        // Fecha o modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('reviewModal2'));
+        modal.hide();
+        
+        // Limpa o formulário
+        document.getElementById('productRating2').value = 0;
+        document.getElementById('reviewText2').value = '';
+        document.querySelectorAll('#reviewModal2 .star').forEach(star => {
+            star.innerHTML = '<i class="far fa-star"></i>';
+            star.classList.remove('active');
+        });
+    }
+    
+    // Função para enviar relato de problema (simulação)
+    function submitProblem() {
+        const problemType = document.getElementById('problemType').value;
+        const problemDescription = document.getElementById('problemDescription').value;
+        
+        if (!problemType) {
+            alert("Por favor, selecione o tipo de problema.");
+            return;
+        }
+        
+        if (!problemDescription) {
+            alert("Por favor, descreva detalhadamente o problema encontrado.");
+            return;
+        }
+        
+        alert(`Relato de problema enviado com sucesso!\n\nTipo: ${problemType}\nDescrição: ${problemDescription}\n\nNossa equipe entrará em contato em até 48 horas para resolver a situação.\n\nEsta é uma simulação. Em um site real, esses dados seriam enviados para o sistema de atendimento.`);
+        
+        // Fecha o modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('problemModal'));
+        modal.hide();
+        
+        // Limpa o formulário
+        document.getElementById('problemType').value = '';
+        document.getElementById('problemDescription').value = '';
     }
 </script>
 

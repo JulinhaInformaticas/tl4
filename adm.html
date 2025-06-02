@@ -16,6 +16,60 @@
         .navbar-brand img {
             height:100px ; /* Ajuste o tamanho da imagem conforme necessário */
         }
+          /* Cards de produtos melhorados (mantendo cores originais) */
+        .products-section {
+            padding: 50px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: rgb(129, 3, 3);
+        }
+        
+        .product-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            height: 100%;
+            background-color: #fff;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .product-img {
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .product-body {
+            padding: 20px;
+            position: relative;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        
+        .product-price {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: red;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
@@ -93,48 +147,61 @@
 </div>
    
 
-
-<div class="row row-cols-1 row-cols-lg-3 align-items-center">
-    <div class="col">
-        <div class="card h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" 
-             style="width: 250px; height: 180px; margin: 0 auto;" 
-             onclick="window.location.href='camisa1.html';" 
-             role="button">
-            <img src="imagens/sjs.jpg" alt="Image" class="card-img-top" 
-                 style="object-fit: cover; height: 100%; width: 100%; border-radius: 4px;">
-            <div class="d-flex flex-column h-100 p-2 text-white text-shadow-1">
-                <h3 class="mt-auto mb-3 display-6 lh-1 fw-bold" style="color: purple;">TL$ Lust</h3>
-                <ul class="d-flex list-unstyled mt-auto"></ul>
+   <!-- Seção de produtos -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">DESTAQUES DA COLEÇÃO</h2>
+            
+            <div class="row">
+                <!-- Produto 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card" onclick="window.location.href='camisa1.html';">
+                        <img src="imagens/sjs.jpg" class="card-img-top product-img" alt="TL$ Lust">
+                        <div class="card-body product-body">
+                            <h5 class="card-title product-title">TL$ Lust</h5>
+                            <p class="card-text">Camiseta premium em algodão penteado</p>
+                            <span class="product-price">R$ 149,90</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produto 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card" onclick="window.location.href='Amor.html';">
+                        <img src="imagens/amor.jpg" class="card-img-top product-img" alt="TL$ Amor">
+                        <div class="card-body product-body">
+                            <h5 class="card-title product-title">TL$ Amor</h5>
+                            <p class="card-text">Camiseta premium de algodão</p>
+                            <span class="product-price">R$ 130,00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produto 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card" onclick="window.location.href='Lucky.html';">
+                        <img src="imagens/green.jpg" class="card-img-top product-img" alt="TL$ Lucky">
+                        <div class="card-body product-body">
+                            <h5 class="card-title product-title">TL$ Lucky</h5>
+                            <p class="card-text">Camiseta estilo retro de poliester</p>
+                            <span class="product-price">R$ 249,90</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produto 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card" onclick="window.location.href='pump.html';">
+                        <img src="imagens/ilv.jpg" class="card-img-top product-img" alt="TL$ Pump">
+                        <div class="card-body product-body">
+                            <h5 class="card-title product-title">TL$ Pump</h5>
+                            <p class="card-text">Jaqueta bomber de couro estilizada</p>
+                            <span class="product-price">R$ 360,00</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-
-<div class="col">
-    <div class="card h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" 
-         style="width: 250px; height: 180px; margin: 0 auto;" 
-         onclick="window.location.href='Amor.html';" 
-         role="button">
-        <img src="imagens/amor.jpg" alt="Image" class="card-img-top" 
-             style="object-fit: cover; height: 100%; width: 100%; border-radius: 4px;">
-        <div class="d-flex flex-column h-100 p-2 text-white text-shadow-1">
-            <h3 class="mt-auto mb-3 display-6 lh-1 fw-bold" style="color: rgb(128, 0, 0);">TL$ Amor</h3>
-            <ul class="d-flex list-unstyled mt-auto"></ul>
-        </div>
-    </div>
-</div>
-<div class="col">
-    <div class="card h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" 
-         style="width: 250px; height: 180px; margin: 0 auto;" 
-         onclick="window.location.href='Lucky.html';" 
-         role="button">
-        <img src="imagens/green.jpg" alt="Image" class="card-img-top" 
-             style="object-fit: cover; height: 100%; width: 100%; border-radius: 4px;">
-        <div class="d-flex flex-column h-100 p-2 text-white text-shadow-1">
-            <h3 class="mt-auto mb-3 display-6 lh-1 fw-bold" style="color: rgb(10, 107, 70);">TL$ Lucky</h3>
-            <ul class="d-flex list-unstyled mt-auto"></ul>
-        </div>
-    </div>
-</div>
+    </section>
 </body>
 </html>
