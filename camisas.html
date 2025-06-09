@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cabeçalho Responsivo</title>
+    <title>TL$4 - Moda Streetwear</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        /* NAVBAR ORIGINAL (mantido exatamente como estava) */
         .navbar {
             background-color: red;
         }
@@ -14,15 +20,110 @@
             color: black !important;
         }
         .navbar-brand img {
-            height: 80px; /* Ajuste o tamanho da imagem conforme necessário */
+            height: 80px;
+        }
+        
+        /* Carrossel melhorado (mantendo o estilo original) */
+        .carousel-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+            padding: 15px;
+            bottom: 30px;
+        }
+        
+        /* Cards de produtos melhorados (mantendo cores originais) */
+        .products-section {
+            padding: 50px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: rgb(129, 3, 3);
+        }
+        
+        .product-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            height: 100%;
+            background-color: #fff;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .product-img {
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .product-body {
+            padding: 20px;
+            position: relative;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        
+        .product-price {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: red;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+        
+        /* Footer original (mantido como estava) */
+        .footer {
+            background-color: rgb(129, 3, 3);
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 14px;
+            width: 100%;
+        }
+        
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
+    <!-- NAVBAR ORIGINAL (mantido exatamente como estava) -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <!-- Corrigido: Adicionando a imagem dentro da tag <a> -->
             <a class="navbar-brand" href="#">
                 <img src="imagens/logo.png" alt="Logo">
             </a>
@@ -47,6 +148,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contato.html">Contato</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meuspedidos.html">Meus Pedidos</a>
+                    </li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
@@ -64,50 +168,111 @@
         </div>
     </nav>
 
+    <!-- Carrossel melhorado -->
+    <div class="carousel-container">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="camisas.html">
+                        <img src="imagens/iniv.jpg" class="d-block w-100" alt="Coleção Inverno">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="skull.html">
+                        <img src="imagens/jaja.jpg" class="d-block w-100" alt="Estilo Skull">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="beatle.html">
+                        <img src="imagens/kkl.jpg" class="d-block w-100" alt="Inspiração Retrô">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="tiger.html">
+                        <img src="imagens/tigkf.jpg" class="d-block w-100" alt="Coleção Tiger">
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </div>
 
-
-    <div class="row row-cols-1 row-cols-lg-3 align-items-center">
-        <div class="col">
-            <div class="card h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" 
-                 style="width: 250px; height: 180px; margin: 0 auto;" 
-                 onclick="window.location.href='camisa1.html';" 
-                 role="button">
-                <img src="imagens/sjs.jpg" alt="Image" class="card-img-top" 
-                     style="object-fit: cover; height: 100%; width: 100%; border-radius: 4px;">
-                <div class="d-flex flex-column h-100 p-2 text-white text-shadow-1">
-                    <h3 class="mt-auto mb-3 display-6 lh-1 fw-bold" style="color: purple;">TL$ Lust</h3>
-                    <ul class="d-flex list-unstyled mt-auto"></ul>
+    <!-- Seção de produtos -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">DESTAQUES DA COLEÇÃO</h2>
+            
+            <div class="row">
+                <!-- Produto 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card" onclick="window.location.href='camisa1.html';">
+                        <img src="imagens/sjs.jpg" class="card-img-top product-img" alt="TL$ Lust">
+                        <div class="card-body product-body">
+                            <h5 class="card-title product-title">TL$ Lust</h5>
+                            <p class="card-text">Camiseta premium em algodão penteado</p>
+                            <span class="product-price">R$ 149,90</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produto 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card" onclick="window.location.href='Amor.html';">
+                        <img src="imagens/amor.jpg" class="card-img-top product-img" alt="TL$ Amor">
+                        <div class="card-body product-body">
+                            <h5 class="card-title product-title">TL$ Amor</h5>
+                            <p class="card-text">Camiseta premium de algodão</p>
+                            <span class="product-price">R$ 130,00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produto 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card" onclick="window.location.href='Lucky.html';">
+                        <img src="imagens/green.jpg" class="card-img-top product-img" alt="TL$ Lucky">
+                        <div class="card-body product-body">
+                            <h5 class="card-title product-title">TL$ Lucky</h5>
+                            <p class="card-text">Camiseta estilo retro de poliester</p>
+                            <span class="product-price">R$ 249,90</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produto 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card" onclick="window.location.href='pump.html';">
+                        <img src="imagens/skul.png" class="card-img-top product-img" alt="TL$ Pump">
+                        <div class="card-body product-body">
+                            <h5 class="card-title product-title">TL$ Imortal Bl</h5>
+                            <p class="card-text">Camisa polo estilizada exclusiva TL$</p>
+                            <span class="product-price">R$ 200,00</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    
-    
-    <div class="col">
-        <div class="card h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" 
-             style="width: 250px; height: 180px; margin: 0 auto;" 
-             onclick="window.location.href='Amor.html';" 
-             role="button">
-            <img src="imagens/amor.jpg" alt="Image" class="card-img-top" 
-                 style="object-fit: cover; height: 100%; width: 100%; border-radius: 4px;">
-            <div class="d-flex flex-column h-100 p-2 text-white text-shadow-1">
-                <h3 class="mt-auto mb-3 display-6 lh-1 fw-bold" style="color: rgb(128, 0, 0);">TL$ Amor</h3>
-                <ul class="d-flex list-unstyled mt-auto"></ul>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" 
-             style="width: 250px; height: 180px; margin: 0 auto;" 
-             onclick="window.location.href='Lucky.html';" 
-             role="button">
-            <img src="imagens/green.jpg" alt="Image" class="card-img-top" 
-                 style="object-fit: cover; height: 100%; width: 100%; border-radius: 4px;">
-            <div class="d-flex flex-column h-100 p-2 text-white text-shadow-1">
-                <h3 class="mt-auto mb-3 display-6 lh-1 fw-bold" style="color: rgb(10, 107, 70);">TL$ Lucky</h3>
-                <ul class="d-flex list-unstyled mt-auto"></ul>
-            </div>
-        </div>
-    </div>
+    </section>
+
+    <!-- Footer original (mantido como estava) -->
+    <footer class="footer">
+        <p>&copy; 2025 TL$4. Todos os direitos reservados.</p>
+        <p><a href="termos.html">Termos de Serviço</a> | <a href="privacidade.html">Política de Privacidade</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
- 
