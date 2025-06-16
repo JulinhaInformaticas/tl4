@@ -19,6 +19,13 @@
             padding: 20px;
         }
 
+        .product-info img {
+            width: 250px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
         .product-info h1 {
             font-size: 36px;
             color: #333;
@@ -183,57 +190,6 @@
     </form>
     <div id="freightResult" style="margin-top: 10px;"></div>
 </div>
-
-<!-- Seção de Avaliações -->
-<div class="reviews-section">
-    <h3>Avaliações dos Clientes</h3>
-    
-    <div class="review">
-        <div class="review-header">
-            <span>João Silva</span>
-            <span class="review-rating">★★★★★</span>
-        </div>
-        <p>Comprei essa camisa e realmente transformou meu ódio em amor! O material é de ótima qualidade e o design é incrível. Recomendo muito!</p>
-    </div>
-    
-    <div class="review">
-        <div class="review-header">
-            <span>Maria Oliveira</span>
-            <span class="review-rating">★★★★☆</span>
-        </div>
-        <p>Adorei o conceito da camisa, mas achei o tecido um pouco grosso para o clima da minha cidade. Mesmo assim, estou satisfeita com a compra.</p>
-    </div>
-    
-    <div class="review">
-        <div class="review-header">
-            <span>Carlos Souza</span>
-            <span class="review-rating">★★★★★</span>
-        </div>
-        <p>Melhor compra que fiz esse ano! A camisa é exatamente como na foto e chegou antes do prazo. Já estou pensando em comprar outra!</p>
-    </div>
-    
-    <div class="review">
-        <div class="review-header">
-            <span>Ana Paula</span>
-            <span class="review-rating">★★★☆☆</span>
-        </div>
-        <p>Gostei do design, mas achei o preço um pouco salgado para o que oferece. O frete foi rápido e o atendimento foi bom.</p>
-    </div>
-</div>
-
-<script>
-    document.getElementById('freightForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        let cep = document.getElementById('cep').value;
-        if (cep) {
-            // Simulando um cálculo de frete (pode ser substituído por uma API real)
-            let freightCost = (Math.random() * 50 + 10).toFixed(2);
-            document.getElementById('freightResult').innerHTML = `O valor do frete para o CEP ${cep} é R$ ${freightCost}`;
-        } else {
-            document.getElementById('freightResult').innerHTML = 'Por favor, insira um CEP válido.';
-        }
-    });
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
