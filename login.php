@@ -69,7 +69,7 @@
         </form>
 
         <div class="register-option">
-            <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
+            <p>Não tem uma conta? <a href="cadastro.php">Cadastre-se aqui</a></p>
         </div>
     </div>
 
@@ -82,7 +82,7 @@
 
             if (usuario === "admin" && senha === "admin") {
                 alert("Login bem-sucedido. Redirecionando...");
-                window.location.href = "adm.html"; // Altere para a página desejada
+                window.location.href = "adm.php"; // Altere para a página desejada
             } else {
                 alert("Usuário ou senha incorretos.");
             }

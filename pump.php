@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .navbar {
-            background-color: rgb(55, 158, 241);
+            background-color: red;
         }
         .navbar-brand, .navbar-nav .nav-link {
-            color: black !important;
+            color: rgb(0, 0, 0) !important;
         }
 
         .product-info {
@@ -26,7 +26,7 @@
 
         .product-info h2 {
             font-size: 28px;
-            color: #014a7a;
+            color: #000000;
         }
 
         .product-info p {
@@ -35,7 +35,7 @@
         }
 
         .action-buttons input {
-            background-color: rgb(57, 159, 243);
+            background-color: red;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -62,14 +62,14 @@
 
         .freight-calculator button {
             padding: 8px 15px;
-            background-color: #287fa7;
+            background-color: #ff0000;
             color: white;
             border: none;
             cursor: pointer;
         }
         
         .freight-calculator button:hover {
-            background-color: #328aee;
+            background-color: #f70000;
         }
 
         .reviews-section {
@@ -126,16 +126,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="pagina1.html">Início</a>
+                    <a class="nav-link" href="pagina1.php">Início</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Produtos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="camisas.html">Camisas</a></li>
-                        <li><a class="dropdown-item" href="blusas.html">Blusas</a></li>
-                        <li><a class="dropdown-item" href="calcas.html">Calças</a></li>
+                        <li><a class="dropdown-item" href="camisas.php">Camisas</a></li>
+                        <li><a class="dropdown-item" href="blusas.php">Blusas</a></li>
+                        <li><a class="dropdown-item" href="calcas.php">Calças</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -148,10 +148,10 @@
             </form>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html"><i class="fas fa-user"></i></a>
+                    <a class="nav-link" href="login.php"><i class="fas fa-user"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="nav-link" href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>
         </div>
@@ -159,16 +159,16 @@
 </nav>
 
 <div class="product-info">
-    <img src="Imagens/don-Photoroom.png" height="500px" alt="presente">
-    <h1>TL$ Tiger</h1>
-    <h2>R$ 299,90</h2>
+    <img src="Imagens/ilv.jpg" height="500px" alt="presente">
+    <h1>TL$ Kill</h1>
+    <h2>R$ 360,00</h2>
     <p>Descrição:</p>
-    <p>TL$ Tiger combina a exlusividade e raridade do tigre branco</p>
+    <p>TL$ Pump é perfeita para dias frios e vilanesco</p>
     <p>uma peça exclusiva e que marca um novo inicio da TL$</p>
-    <p>compre-a por apenas R$299,90, muito melhor que a sua alma!</p>
+    <p>compre-a por apenas R$360,00, muito melhor que a sua alma!</p>
     <div class="action-buttons">
-        <input type="button" value="ADICIONAR AO CARRINHO" onclick="window.location.href='carrinho.html';">
-        <input type="button" value="COMPRAR" onclick="window.location.href='compra.html';">
+        <input type="button" value="ADICIONAR AO CARRINHO" onclick="window.location.href='carrinho.php';">
+        <input type="button" value="COMPRAR" onclick="window.location.href='compra.php';">
     </div>
 </div>
 

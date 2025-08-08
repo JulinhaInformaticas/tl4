@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .navbar {
-            background-color: red;
+            background-color: rgb(25, 129, 4);
         }
         .navbar-brand, .navbar-nav .nav-link {
-            color: rgb(0, 0, 0) !important;
+            color: rgb(175, 0, 0) !important;
         }
 
         .product-info {
@@ -26,7 +26,7 @@
 
         .product-info h2 {
             font-size: 28px;
-            color: #000000;
+            color: #035000;
         }
 
         .product-info p {
@@ -35,7 +35,7 @@
         }
 
         .action-buttons input {
-            background-color: red;
+            background-color: rgb(185, 0, 0);
             color: white;
             border: none;
             padding: 10px 20px;
@@ -62,14 +62,10 @@
 
         .freight-calculator button {
             padding: 8px 15px;
-            background-color: #ff0000;
+            background-color: #006905;
             color: white;
             border: none;
             cursor: pointer;
-        }
-        
-        .freight-calculator button:hover {
-            background-color: #f70000;
         }
 
         .reviews-section {
@@ -99,6 +95,10 @@
         .review-rating {
             color: #e83e3e;
         }
+        
+        .freight-calculator button:hover {
+            background-color: #f70000;
+        }
 
         /* Mobile responsiveness */
         @media (max-width: 768px) {
@@ -126,16 +126,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="pagina1.html">Início</a>
+                    <a class="nav-link" href="pagina1.php">Início</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Produtos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="camisas.html">Camisas</a></li>
-                        <li><a class="dropdown-item" href="blusas.html">Blusas</a></li>
-                        <li><a class="dropdown-item" href="calcas.html">Calças</a></li>
+                        <li><a class="dropdown-item" href="camisas.php">Camisas</a></li>
+                        <li><a class="dropdown-item" href="blusas.php">Blusas</a></li>
+                        <li><a class="dropdown-item" href="calcas.php">Calças</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -148,10 +148,10 @@
             </form>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html"><i class="fas fa-user"></i></a>
+                    <a class="nav-link" href="login.php"><i class="fas fa-user"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="nav-link" href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>
         </div>
@@ -159,16 +159,16 @@
 </nav>
 
 <div class="product-info">
-    <img src="Imagens/Telisss.png" height="500px" alt="presente">
-    <h1>TL$ UZI</h1>
-    <h2>R$ 160,00</h2>
+    <img src="Imagens/skul.png" height="500px" alt="presente">
+    <h1>TL$ Imortal Bl.</h1>
+    <h2>R$ 200,00</h2>
     <p>Descrição:</p>
-    <p>TL$ UZI combina ousadia e terror com estilo</p>
+    <p>TL$ Kill combina o ódio e a sutileza da sobrevivência</p>
     <p>uma peça exclusiva e que marca um novo inicio da TL$</p>
-    <p>compre-a por apenas R$160,00, muito melhor que a sua alma!</p>
+    <p>compre-a por apenas R$200,00, muito melhor que a sua alma!</p>
     <div class="action-buttons">
-        <input type="button" value="ADICIONAR AO CARRINHO" onclick="window.location.href='carrinho.html';">
-        <input type="button" value="COMPRAR" onclick="window.location.href='compra.html';">
+        <input type="button" value="ADICIONAR AO CARRINHO" onclick="window.location.href='carrinho.php';">
+        <input type="button" value="COMPRAR" onclick="window.location.href='compra.php';">
     </div>
 </div>
 

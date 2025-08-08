@@ -8,15 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .navbar {
-            background-color: rgb(25, 129, 4);
+            background-color: red;
         }
         .navbar-brand, .navbar-nav .nav-link {
-            color: rgb(175, 0, 0) !important;
+            color: black !important;
         }
 
         .product-info {
             text-align: center;
             padding: 20px;
+        }
+
+        .product-info img {
+            width: 250px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
 
         .product-info h1 {
@@ -26,7 +33,7 @@
 
         .product-info h2 {
             font-size: 28px;
-            color: #035000;
+            color: #E83E8C;
         }
 
         .product-info p {
@@ -35,7 +42,7 @@
         }
 
         .action-buttons input {
-            background-color: rgb(185, 0, 0);
+            background-color: green;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -62,10 +69,14 @@
 
         .freight-calculator button {
             padding: 8px 15px;
-            background-color: #006905;
+            background-color: #28a745;
             color: white;
             border: none;
             cursor: pointer;
+        }
+        
+        .freight-calculator button:hover {
+            background-color: #218838;
         }
 
         .reviews-section {
@@ -95,10 +106,6 @@
         .review-rating {
             color: #e83e3e;
         }
-        
-        .freight-calculator button:hover {
-            background-color: #f70000;
-        }
 
         /* Mobile responsiveness */
         @media (max-width: 768px) {
@@ -126,16 +133,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="pagina1.html">Início</a>
+                    <a class="nav-link" href="pagina1.php">Início</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Produtos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="camisas.html">Camisas</a></li>
-                        <li><a class="dropdown-item" href="blusas.html">Blusas</a></li>
-                        <li><a class="dropdown-item" href="calcas.html">Calças</a></li>
+                        <li><a class="dropdown-item" href="camisas.php">Camisas</a></li>
+                        <li><a class="dropdown-item" href="blusas.php">Blusas</a></li>
+                        <li><a class="dropdown-item" href="calcas.php">Calças</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -148,10 +155,10 @@
             </form>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html"><i class="fas fa-user"></i></a>
+                    <a class="nav-link" href="login.php"><i class="fas fa-user"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="nav-link" href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>
         </div>
@@ -159,16 +166,15 @@
 </nav>
 
 <div class="product-info">
-    <img src="Imagens/skul.png" height="500px" alt="presente">
-    <h1>TL$ Imortal Bl.</h1>
-    <h2>R$ 200,00</h2>
+    <img src="Imagens/grn2.png" alt="presente">
+    <h1>TL$ Lucky</h1>
+    <h2>R$ 249,90</h2>
     <p>Descrição:</p>
-    <p>TL$ Kill combina o ódio e a sutileza da sobrevivência</p>
-    <p>uma peça exclusiva e que marca um novo inicio da TL$</p>
-    <p>compre-a por apenas R$200,00, muito melhor que a sua alma!</p>
+    <p>TL$ Lucky combina sutileza e a suavidade dos campos antigos.</p>
+    <p>Obtenha a classe de vestir essa camiseta exclusiva da TL$ por apenas R$249,90!</p>
     <div class="action-buttons">
-        <input type="button" value="ADICIONAR AO CARRINHO" onclick="window.location.href='carrinho.html';">
-        <input type="button" value="COMPRAR" onclick="window.location.href='compra.html';">
+        <input type="button" value="ADICIONAR AO CARRINHO" onclick="window.location.href='carrinho.php';">
+        <input type="button" value="COMPRAR" onclick="window.location.href='compra.php';">
     </div>
 </div>
 
@@ -184,57 +190,6 @@
     </form>
     <div id="freightResult" style="margin-top: 10px;"></div>
 </div>
-
-<!-- Seção de Avaliações -->
-<div class="reviews-section">
-    <h3>Avaliações dos Clientes</h3>
-    
-    <div class="review">
-        <div class="review-header">
-            <span>João Silva</span>
-            <span class="review-rating">★★★★★</span>
-        </div>
-        <p>Comprei essa camisa e realmente transformou meu ódio em amor! O material é de ótima qualidade e o design é incrível. Recomendo muito!</p>
-    </div>
-    
-    <div class="review">
-        <div class="review-header">
-            <span>Maria Oliveira</span>
-            <span class="review-rating">★★★★☆</span>
-        </div>
-        <p>Adorei o conceito da camisa, mas achei o tecido um pouco grosso para o clima da minha cidade. Mesmo assim, estou satisfeita com a compra.</p>
-    </div>
-    
-    <div class="review">
-        <div class="review-header">
-            <span>Carlos Souza</span>
-            <span class="review-rating">★★★★★</span>
-        </div>
-        <p>Melhor compra que fiz esse ano! A camisa é exatamente como na foto e chegou antes do prazo. Já estou pensando em comprar outra!</p>
-    </div>
-    
-    <div class="review">
-        <div class="review-header">
-            <span>Ana Paula</span>
-            <span class="review-rating">★★★☆☆</span>
-        </div>
-        <p>Gostei do design, mas achei o preço um pouco salgado para o que oferece. O frete foi rápido e o atendimento foi bom.</p>
-    </div>
-</div>
-
-<script>
-    document.getElementById('freightForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        let cep = document.getElementById('cep').value;
-        if (cep) {
-            // Simulando um cálculo de frete (pode ser substituído por uma API real)
-            let freightCost = (Math.random() * 50 + 10).toFixed(2);
-            document.getElementById('freightResult').innerHTML = `O valor do frete para o CEP ${cep} é R$ ${freightCost}`;
-        } else {
-            document.getElementById('freightResult').innerHTML = 'Por favor, insira um CEP válido.';
-        }
-    });
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

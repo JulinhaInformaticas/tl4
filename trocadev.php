@@ -34,7 +34,7 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand d-flex align-items-center me-3" href="pagina1.html">
+          <a class="navbar-brand d-flex align-items-center me-3" href="pagina1.php">
             <img src="imagens/logo.png" alt="Logo">
           </a>
         </div>

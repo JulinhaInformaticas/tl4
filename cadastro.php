@@ -77,7 +77,7 @@
 <script>
     function mensagem() {
         alert("Você se cadastrou no nosso sistema!");
-        window.location.href = "pagina1.html"; // Substitua "paginaDestino.html" pela URL desejada.
+        window.location.href = "pagina1.php"; // Substitua "paginaDestino.php" pela URL desejada.
     }
 </script>
 </body>

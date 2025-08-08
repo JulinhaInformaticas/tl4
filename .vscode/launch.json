@@ -7,8 +7,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open pagina1.html",
-            "file": "c:\\Users\\cj3022048\\tl4\\pagina1.html"
+            "name": "Open pagina1.php",
+            "file": "c:\\Users\\cj3022048\\tl4\\pagina1.php"
         }
     ]
 }

@@ -280,7 +280,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="adm.html"><i class="fas fa-home"></i> Início</a>
+          <a class="nav-link" href="adm.php"><i class="fas fa-home"></i> Início</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -288,21 +288,21 @@
             <i class="fas fa-boxes"></i> Produtos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="camisas.html">Camisas</a></li>
-            <li><a class="dropdown-item" href="blusas.html">Blusas</a></li>
-            <li><a class="dropdown-item" href="calcas.html">Calças</a></li>
+            <li><a class="dropdown-item" href="camisas.php">Camisas</a></li>
+            <li><a class="dropdown-item" href="blusas.php">Blusas</a></li>
+            <li><a class="dropdown-item" href="calcas.php">Calças</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="relatorio.html"><i class="fas fa-chart-line"></i> Relatórios</a>
+          <a class="nav-link active" href="relatorio.php"><i class="fas fa-chart-line"></i> Relatórios</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contato.html"><i class="fas fa-envelope"></i> Contato</a>
+          <a class="nav-link" href="contato.php"><i class="fas fa-envelope"></i> Contato</a>
         </li>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="login.html"><i class="fas fa-user"></i> Admin</a>
+          <a class="nav-link" href="login.php"><i class="fas fa-user"></i> Admin</a>
         </li>
       </ul>
     </div>

@@ -87,9 +87,9 @@
             <label for="payment-method" class="form-label"><i class="fas fa-credit-card form-icon"></i>Método de Pagamento:</label>
             <select class="form-select" id="payment-method" name="payment-method" required>
                 <option value="">Selecione uma opção</option>
-                <option value="pcc.html">Cartão de Crédito</option>
-                <option value="pcd.html">Cartão de Débito</option>
-                <option value="pix.html">Pix</option>
+                <option value="pcc.php">Cartão de Crédito</option>
+                <option value="pcd.php">Cartão de Débito</option>
+                <option value="pix.php">Pix</option>
             </select>
         </div>
 

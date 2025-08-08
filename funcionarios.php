@@ -74,10 +74,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="adm.html">Início</a>
+                        <a class="nav-link" href="adm.php">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Contato</a>
+                        <a class="nav-link" href="contato.php">Contato</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -177,7 +177,7 @@
 
     <footer class="footer mt-5">
         <p>&copy; 2025 TL$4. Todos os direitos reservados.</p>
-        <p><a href="termos.html">Termos de Serviço</a> | <a href="privacidade.html">Política de Privacidade</a></p>
+        <p><a href="termos.php">Termos de Serviço</a> | <a href="privacidade.php">Política de Privacidade</a></p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

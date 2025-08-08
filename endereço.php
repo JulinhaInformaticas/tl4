@@ -193,7 +193,7 @@
     localStorage.setItem('enderecos', JSON.stringify(enderecos));
 
     alert('Endereço salvo com sucesso!');
-    window.location.href = 'checkout.html';
+    window.location.href = 'checkout.php';
   });
 
   // Simular pagamento

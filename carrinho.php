@@ -84,21 +84,21 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="pagina1.html">Início</a>
+                    <a class="nav-link active" aria-current="page" href="pagina1.php">Início</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Produtos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="camisas.html">Camisas</a></li>
-                        <li><a class="dropdown-item" href="blusas.html">Blusas</a></li>
-                        <li><a class="dropdown-item" href="calcas.html">Calças</a></li>
+                        <li><a class="dropdown-item" href="camisas.php">Camisas</a></li>
+                        <li><a class="dropdown-item" href="blusas.php">Blusas</a></li>
+                        <li><a class="dropdown-item" href="calcas.php">Calças</a></li>
                     </ul>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html"><i class="fas fa-user"></i></a>
+                    <a class="nav-link" href="login.php"><i class="fas fa-user"></i></a>
                 </li>
             </ul>
         </div>
@@ -152,7 +152,7 @@
         <p>Total: R$ 449,80</p>
     </div>
 
-    <button class="btn btn-danger mt-3" onclick="window.location.href='compra.html';">Finalizar Compra</button>
+    <button class="btn btn-danger mt-3" onclick="window.location.href='compra.php';">Finalizar Compra</button>
 </div>
 
 <script>

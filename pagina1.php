@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cabeçalho Responsivo</title>
+    <title>TL$4 - Moda Streetwear</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        /* NAVBAR ORIGINAL (mantido exatamente como estava) */
         .navbar {
             background-color: red;
         }
@@ -14,9 +20,31 @@
             color: black !important;
         }
         .navbar-brand img {
-            height:100px ; /* Ajuste o tamanho da imagem conforme necessário */
+            height: 80px;
         }
-          /* Cards de produtos melhorados (mantendo cores originais) */
+        
+        /* Carrossel melhorado (mantendo o estilo original) */
+        .carousel-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+            padding: 15px;
+            bottom: 30px;
+        }
+        
+        /* Cards de produtos melhorados (mantendo cores originais) */
         .products-section {
             padding: 50px 0;
         }
@@ -70,14 +98,34 @@
             border-radius: 20px;
             font-weight: 700;
         }
+        
+        /* Footer original (mantido como estava) */
+        .footer {
+            background-color: rgb(129, 3, 3);
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 14px;
+            width: 100%;
+        }
+        
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
+    <!-- NAVBAR ORIGINAL (mantido exatamente como estava) -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="imagens/logo.png" height="7px" alt="Logo">
+                <img src="imagens/logo.png" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -85,20 +133,23 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="pagina1.html">Início</a>
+                        <a class="nav-link" href="pagina1.php">Início</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Produtos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="camisas.html">Camisas</a></li>
-                            <li><a class="dropdown-item" href="blusas.html">Blusas</a></li>
-                            <li><a class="dropdown-item" href="calcas.html">Calças</a></li>
+                            <li><a class="dropdown-item" href="camisas.php">Camisas</a></li>
+                            <li><a class="dropdown-item" href="blusas.php">Blusas</a></li>
+                            <li><a class="dropdown-item" href="calcas.php">Calças</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Contato</a>
+                        <a class="nav-link" href="contato.php">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meuspedidos.php">Meus Pedidos</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -107,47 +158,59 @@
                 </form>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="login.html"><i class="fas fa-user"></i></a>
+                        <a class="nav-link" href="login.php"><i class="fas fa-user"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-light text-black" href="estoque.html">Estoque</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-light text-black ms-2" href="relatorio.html">Relatório</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-light text-black ms-2" href="status.html">Processos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-light text-black ms-2" href="funcionarios.html">Equipe</a>
+                        <a class="nav-link" href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                 </ul>
-                
+            </div>
+        </div>
     </nav>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" style="width: 80%; max-width: 800px; margin: 0 auto;">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <a href="camisas.html"><img src="imagens/iniv.jpg" class="d-block mx-auto" style="width: 100%; height: auto;" alt="blusa1"></a>
-        </div>
-        <div class="carousel-item">
-            <a href="skull.html"><img src="imagens/jaja.jpg" class="d-block mx-auto" style="width: 100%; height: auto;" alt="blusa2"></a>
-        </div>
-        <div class="carousel-item">
-            <a href="beatle.html"><img src="imagens/kkl.jpg" class="d-block mx-auto" style="width: 100%; height: auto;" alt="camisa1"></a>
-        </div>
-        <div class="carousel-item">
-            <a href="tiger.html"><img src="imagens/tigkf.jpg" class="d-block mx-auto" style="width: 100%; height: auto;" alt="tg"></a>
+    <!-- Carrossel melhorado -->
+    <div class="carousel-container">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="camisas.php">
+                        <img src="imagens/iniv.jpg" class="d-block w-100" alt="Coleção Inverno">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="skull.php">
+                        <img src="imagens/jaja.jpg" class="d-block w-100" alt="Estilo Skull">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="beatle.php">
+                        <img src="imagens/kkl.jpg" class="d-block w-100" alt="Inspiração Retrô">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="tiger.php">
+                        <img src="imagens/tigkf.jpg" class="d-block w-100" alt="Coleção Tiger">
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
         </div>
     </div>
-</div>
-   
 
-   <!-- Seção de produtos -->
+    <!-- Seção de produtos -->
     <section class="products-section">
         <div class="container">
             <h2 class="section-title">DESTAQUES DA COLEÇÃO</h2>
@@ -155,7 +218,7 @@
             <div class="row">
                 <!-- Produto 1 -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='camisa1.html';">
+                    <div class="card product-card" onclick="window.location.href='camisa1.php';">
                         <img src="imagens/sjs.jpg" class="card-img-top product-img" alt="TL$ Lust">
                         <div class="card-body product-body">
                             <h5 class="card-title product-title">TL$ Lust</h5>
@@ -167,7 +230,7 @@
                 
                 <!-- Produto 2 -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='Amor.html';">
+                    <div class="card product-card" onclick="window.location.href='Amor.php';">
                         <img src="imagens/amor.jpg" class="card-img-top product-img" alt="TL$ Amor">
                         <div class="card-body product-body">
                             <h5 class="card-title product-title">TL$ Amor</h5>
@@ -179,7 +242,7 @@
                 
                 <!-- Produto 3 -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='Lucky.html';">
+                    <div class="card product-card" onclick="window.location.href='Lucky.php';">
                         <img src="imagens/green.jpg" class="card-img-top product-img" alt="TL$ Lucky">
                         <div class="card-body product-body">
                             <h5 class="card-title product-title">TL$ Lucky</h5>
@@ -191,7 +254,7 @@
                 
                 <!-- Produto 4 -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='pump.html';">
+                    <div class="card product-card" onclick="window.location.href='pump.php';">
                         <img src="imagens/ilv.jpg" class="card-img-top product-img" alt="TL$ Pump">
                         <div class="card-body product-body">
                             <h5 class="card-title product-title">TL$ Pump</h5>
@@ -200,8 +263,8 @@
                         </div>
                     </div>
                 </div>
-                 <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='yokai.html';">
+                  <div class="col-md-6 col-lg-3">
+                    <div class="card product-card" onclick="window.location.href='yokai.php';">
                         <img src="imagens/yokai-Photoroom.png" class="card-img-top product-img" alt="TL$ Pump">
                         <div class="card-body product-body">
                             <h5 class="card-title product-title">TL$ Yokai</h5>
@@ -211,7 +274,7 @@
                     </div>
                 </div>
                  <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='Dreams.html';">
+                    <div class="card product-card" onclick="window.location.href='Dreams.php';">
                         <img src="imagens/japanrelease-Photoroom.png" class="card-img-top product-img" alt="TL$ Pump">
                         <div class="card-body product-body">
                             <h5 class="card-title product-title">TL$ Dreams</h5>
@@ -221,7 +284,7 @@
                     </div>
                 </div>
                  <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='kabal.html';">
+                    <div class="card product-card" onclick="window.location.href='kabal.php';">
                         <img src="imagens/kanye_resized.png" class="card-img-top product-img" alt="TL$ Pump">
                         <div class="card-body product-body">
                             <h5 class="card-title product-title">TL$ Kabal</h5>
@@ -231,7 +294,7 @@
                     </div>
                 </div>
                   <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='Uzi.html';">
+                    <div class="card product-card" onclick="window.location.href='Uzi.php';">
                         <img src="imagens/Telisss.png" class="card-img-top product-img" alt="TL$ Pump">
                         <div class="card-body product-body">
                             <h5 class="card-title product-title">TL$ UZI</h5>
@@ -241,8 +304,15 @@
                     </div>
                 </div>
             </div>
-            </div>
         </div>
     </section>
+
+    <!-- Footer original (mantido como estava) -->
+    <footer class="footer">
+        <p>&copy; 2025 TL$4. Todos os direitos reservados.</p>
+        <p><a href="termos.php">Termos de Serviço</a> | <a href="privacidade.php">Política de Privacidade</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

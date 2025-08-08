@@ -172,7 +172,7 @@
     <script>
         // Redirecionar para tela de novo endereço
         document.getElementById('new-address-btn').addEventListener('click', function() {
-            window.location.href = 'endereço.html';
+            window.location.href = 'endereço.php';
         });
 
         // Selecionar endereço ou pagamento

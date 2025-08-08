@@ -11,7 +11,7 @@
             background-color: red;
         }
         .navbar-brand, .navbar-nav .nav-link {
-            color: black !important;
+            color: rgb(0, 0, 0) !important;
         }
 
         .product-info {
@@ -26,7 +26,7 @@
 
         .product-info h2 {
             font-size: 28px;
-            color: #e83e3e;
+            color: #000000;
         }
 
         .product-info p {
@@ -35,7 +35,7 @@
         }
 
         .action-buttons input {
-            background-color: rgb(128, 0, 0);
+            background-color: red;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -62,14 +62,14 @@
 
         .freight-calculator button {
             padding: 8px 15px;
-            background-color: #a72828;
+            background-color: #ff0000;
             color: white;
             border: none;
             cursor: pointer;
         }
         
         .freight-calculator button:hover {
-            background-color: #882121;
+            background-color: #f70000;
         }
 
         .reviews-section {
@@ -111,9 +111,6 @@
             .freight-calculator {
                 width: 90%;
             }
-            .reviews-section {
-                width: 95%;
-            }
         }
     </style>
 </head>
@@ -129,16 +126,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="pagina1.html">Início</a>
+                    <a class="nav-link" href="pagina1.php">Início</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Produtos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="camisas.html">Camisas</a></li>
-                        <li><a class="dropdown-item" href="blusas.html">Blusas</a></li>
-                        <li><a class="dropdown-item" href="calcas.html">Calças</a></li>
+                        <li><a class="dropdown-item" href="camisas.php">Camisas</a></li>
+                        <li><a class="dropdown-item" href="blusas.php">Blusas</a></li>
+                        <li><a class="dropdown-item" href="calcas.php">Calças</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -151,10 +148,10 @@
             </form>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html"><i class="fas fa-user"></i></a>
+                    <a class="nav-link" href="login.php"><i class="fas fa-user"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="nav-link" href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>
         </div>
@@ -162,16 +159,16 @@
 </nav>
 
 <div class="product-info">
-    <img src="Imagens/amor.jpg" height="450px" alt="presente">
-    <h1>TL$ Amor</h1>
-    <h2>R$ 130,00</h2>
+    <img src="Imagens/yokai-Photoroom.png" height="500px" alt="presente">
+    <h1>TL$ Yokai</h1>
+    <h2>R$ 260,00</h2>
     <p>Descrição:</p>
-    <p>TL$ Amor carrega o ódio de todos que não foram amados</p>
-    <p>transforme seu ódio em amor, obtendo essa peça exclusiva</p>
-    <p>da TL$ por apenas R$130,00, muito melhor que a sua alma!</p>
+    <p>TL$ Yokai é perfeita enfrentar seus yokais internos</p>
+    <p>uma peça exclusiva e que marca um novo inicio da TL$</p>
+    <p>compre-a por apenas R$260,00, muito melhor que a sua alma!</p>
     <div class="action-buttons">
-        <input type="button" value="ADICIONAR AO CARRINHO" onclick="window.location.href='carrinho.html';">
-        <input type="button" value="COMPRAR" onclick="window.location.href='compra.html';">
+        <input type="button" value="ADICIONAR AO CARRINHO" onclick="window.location.href='carrinho.php';">
+        <input type="button" value="COMPRAR" onclick="window.location.href='compra.php';">
     </div>
 </div>
 

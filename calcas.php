@@ -133,23 +133,23 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="pagina1.html">Início</a>
+                        <a class="nav-link" href="pagina1.php">Início</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Produtos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="camisas.html">Camisas</a></li>
-                            <li><a class="dropdown-item" href="blusas.html">Blusas</a></li>
-                            <li><a class="dropdown-item" href="calcas.html">Calças</a></li>
+                            <li><a class="dropdown-item" href="camisas.php">Camisas</a></li>
+                            <li><a class="dropdown-item" href="blusas.php">Blusas</a></li>
+                            <li><a class="dropdown-item" href="calcas.php">Calças</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Contato</a>
+                        <a class="nav-link" href="contato.php">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="meuspedidos.html">Meus Pedidos</a>
+                        <a class="nav-link" href="meuspedidos.php">Meus Pedidos</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -158,10 +158,10 @@
                 </form>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="login.html"><i class="fas fa-user"></i></a>
+                        <a class="nav-link" href="login.php"><i class="fas fa-user"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+                        <a class="nav-link" href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                 </ul>
             </div>
@@ -179,22 +179,22 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="camisas.html">
+                    <a href="camisas.php">
                         <img src="imagens/iniv.jpg" class="d-block w-100" alt="Coleção Inverno">
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="skull.html">
+                    <a href="skull.php">
                         <img src="imagens/jaja.jpg" class="d-block w-100" alt="Estilo Skull">
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="beatle.html">
+                    <a href="beatle.php">
                         <img src="imagens/kkl.jpg" class="d-block w-100" alt="Inspiração Retrô">
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="tiger.html">
+                    <a href="tiger.php">
                         <img src="imagens/tigkf.jpg" class="d-block w-100" alt="Coleção Tiger">
                     </a>
                 </div>
@@ -216,34 +216,43 @@
             <h2 class="section-title">DESTAQUES DA COLEÇÃO</h2>
             
             <div class="row">
-                <!-- Produto 4 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='pump.html';">
-                        <img src="imagens/ilv.jpg" class="card-img-top product-img" alt="TL$ Pump">
-                        <div class="card-body product-body">
-                            <h5 class="card-title product-title">TL$ Pump</h5>
-                            <p class="card-text">Jaqueta bomber de couro estilizada</p>
-                            <span class="product-price">R$ 360,00</span>
-                        </div>
-                    </div>
-                </div>
                   <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='pump.html';">
-                        <img src="imagens/23.jpg" class="card-img-top product-img" alt="TL$ Pump">
+                    <div class="card product-card" onclick="window.location.href='yokai.php';">
+                        <img src="imagens/yokai-Photoroom.png" class="card-img-top product-img" alt="TL$ Yokai">
                         <div class="card-body product-body">
-                            <h5 class="card-title product-title">TL$ Beatle</h5>
-                            <p class="card-text">Moletom careca exclusivo TL$</p>
-                            <span class="product-price">R$ 220,00</span>
+                            <h5 class="card-title product-title">TL$ Yokai</h5>
+                            <p class="card-text">Calça baggy estilizada oriental</p>
+                            <span class="product-price">R$ 260,00</span>
                         </div>
                     </div>
                 </div>
                  <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='pump.html';">
-                        <img src="imagens/don-Photoroom.png" class="card-img-top product-img" alt="TL$ Pump">
+                    <div class="card product-card" onclick="window.location.href='Dreams.php';">
+                        <img src="imagens/japanrelease-Photoroom.png" class="card-img-top product-img" alt="TL$ Pump">
                         <div class="card-body product-body">
-                            <h5 class="card-title product-title">TL$ Tiger</h5>
-                            <p class="card-text">Moletom careca exclusivo TL$</p>
-                            <span class="product-price">R$ 299,90</span>
+                            <h5 class="card-title product-title">TL$ Dreams</h5>
+                            <p class="card-text">Calça baggy estilizada oriental</p>
+                            <span class="product-price">R$ 260,00</span>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-md-6 col-lg-3">
+                    <div class="card product-card" onclick="window.location.href='kabal.php';">
+                        <img src="imagens/kanye_resized.png" class="card-img-top product-img" alt="TL$ Pump">
+                        <div class="card-body product-body">
+                            <h5 class="card-title product-title">TL$ Kabal</h5>
+                            <p class="card-text">Calça moletom estilizada</p>
+                            <span class="product-price">R$ 260,00</span>
+                        </div>
+                    </div>
+                </div>
+                  <div class="col-md-6 col-lg-3">
+                    <div class="card product-card" onclick="window.location.href='Uzi.php';">
+                        <img src="imagens/Telisss.png" class="card-img-top product-img" alt="TL$ Pump">
+                        <div class="card-body product-body">
+                            <h5 class="card-title product-title">TL$ UZI</h5>
+                            <p class="card-text">Calça moletom estilizada</p>
+                            <span class="product-price">R$ 160,00</span>
                         </div>
                     </div>
                 </div>
@@ -254,7 +263,7 @@
     <!-- Footer original (mantido como estava) -->
     <footer class="footer">
         <p>&copy; 2025 TL$4. Todos os direitos reservados.</p>
-        <p><a href="termos.html">Termos de Serviço</a> | <a href="privacidade.html">Política de Privacidade</a></p>
+        <p><a href="termos.php">Termos de Serviço</a> | <a href="privacidade.php">Política de Privacidade</a></p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

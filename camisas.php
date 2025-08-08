@@ -133,23 +133,23 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="pagina1.html">Início</a>
+                        <a class="nav-link" href="pagina1.php">Início</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Produtos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="camisas.html">Camisas</a></li>
-                            <li><a class="dropdown-item" href="blusas.html">Blusas</a></li>
-                            <li><a class="dropdown-item" href="calcas.html">Calças</a></li>
+                            <li><a class="dropdown-item" href="camisas.php">Camisas</a></li>
+                            <li><a class="dropdown-item" href="blusas.php">Blusas</a></li>
+                            <li><a class="dropdown-item" href="calcas.php">Calças</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Contato</a>
+                        <a class="nav-link" href="contato.php">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="meuspedidos.html">Meus Pedidos</a>
+                        <a class="nav-link" href="meuspedidos.php">Meus Pedidos</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -158,10 +158,10 @@
                 </form>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="login.html"><i class="fas fa-user"></i></a>
+                        <a class="nav-link" href="login.php"><i class="fas fa-user"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+                        <a class="nav-link" href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                 </ul>
             </div>
@@ -179,22 +179,22 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="camisas.html">
+                    <a href="camisas.php">
                         <img src="imagens/iniv.jpg" class="d-block w-100" alt="Coleção Inverno">
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="skull.html">
+                    <a href="skull.php">
                         <img src="imagens/jaja.jpg" class="d-block w-100" alt="Estilo Skull">
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="beatle.html">
+                    <a href="beatle.php">
                         <img src="imagens/kkl.jpg" class="d-block w-100" alt="Inspiração Retrô">
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="tiger.html">
+                    <a href="tiger.php">
                         <img src="imagens/tigkf.jpg" class="d-block w-100" alt="Coleção Tiger">
                     </a>
                 </div>
@@ -218,7 +218,7 @@
             <div class="row">
                 <!-- Produto 1 -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='camisa1.html';">
+                    <div class="card product-card" onclick="window.location.href='camisa1.php';">
                         <img src="imagens/sjs.jpg" class="card-img-top product-img" alt="TL$ Lust">
                         <div class="card-body product-body">
                             <h5 class="card-title product-title">TL$ Lust</h5>
@@ -230,7 +230,7 @@
                 
                 <!-- Produto 2 -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='Amor.html';">
+                    <div class="card product-card" onclick="window.location.href='Amor.php';">
                         <img src="imagens/amor.jpg" class="card-img-top product-img" alt="TL$ Amor">
                         <div class="card-body product-body">
                             <h5 class="card-title product-title">TL$ Amor</h5>
@@ -242,7 +242,7 @@
                 
                 <!-- Produto 3 -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='Lucky.html';">
+                    <div class="card product-card" onclick="window.location.href='Lucky.php';">
                         <img src="imagens/green.jpg" class="card-img-top product-img" alt="TL$ Lucky">
                         <div class="card-body product-body">
                             <h5 class="card-title product-title">TL$ Lucky</h5>
@@ -254,7 +254,7 @@
                 
                 <!-- Produto 4 -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="card product-card" onclick="window.location.href='pump.html';">
+                    <div class="card product-card" onclick="window.location.href='pump.php';">
                         <img src="imagens/skul.png" class="card-img-top product-img" alt="TL$ Pump">
                         <div class="card-body product-body">
                             <h5 class="card-title product-title">TL$ Imortal Bl</h5>
@@ -270,7 +270,7 @@
     <!-- Footer original (mantido como estava) -->
     <footer class="footer">
         <p>&copy; 2025 TL$4. Todos os direitos reservados.</p>
-        <p><a href="termos.html">Termos de Serviço</a> | <a href="privacidade.html">Política de Privacidade</a></p>
+        <p><a href="termos.php">Termos de Serviço</a> | <a href="privacidade.php">Política de Privacidade</a></p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

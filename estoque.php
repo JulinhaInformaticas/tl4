@@ -40,20 +40,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="adm.html">Início</a>
+                        <a class="nav-link" href="adm.php">Início</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Produtos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="camisas.html">Camisas</a></li>
-                            <li><a class="dropdown-item" href="blusas.html">Blusas</a></li>
-                            <li><a class="dropdown-item" href="calcas.html">Calças</a></li>
+                            <li><a class="dropdown-item" href="camisas.php">Camisas</a></li>
+                            <li><a class="dropdown-item" href="blusas.php">Blusas</a></li>
+                            <li><a class="dropdown-item" href="calcas.php">Calças</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-white" href="ad_prod.html">Adicionar</a>
+                        <a class="nav-link btn btn-outline-white" href="ad_prod.php">Adicionar</a>
                     </li>
                 </ul>
             </div>
@@ -97,7 +97,7 @@
 
         <div class="d-flex justify-content-between align-items-center mb-2">
             <h4>Lista de Produtos em Estoque</h4>
-            <a href="ad_prod.html" class="btn btn-primary" style="background-color: red; color: white;">
+            <a href="ad_prod.php" class="btn btn-primary" style="background-color: red; color: white;">
                 <i class="fas fa-plus"></i> Adicionar Produto
             </a>
         </div>
@@ -115,7 +115,7 @@
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td><a href="Amor.html">TL$ Amor</a></td>
+                    <td><a href="Amor.php">TL$ Amor</a></td>
                     <td>Camisas</td>
                     <td>100</td>
                     <td>
@@ -125,7 +125,7 @@
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td><a href="Lucky.html">TL$ Lucky</a></td>
+                    <td><a href="Lucky.php">TL$ Lucky</a></td>
                     <td>Camisas</td>
                     <td>100</td>
                     <td>
@@ -135,7 +135,7 @@
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td><a href="camisa1.html">TL$ Lust</a></td>
+                    <td><a href="camisa1.php">TL$ Lust</a></td>
                     <td>Camisas</td>
                     <td>100</td>
                     <td>
@@ -145,7 +145,7 @@
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td><a href="tiger.html">TL$ Tiger</a></td>
+                    <td><a href="tiger.php">TL$ Tiger</a></td>
                     <td>Blusas</td>
                     <td>20</td>
                     <td>
@@ -155,7 +155,7 @@
                 </tr>
                 <tr>
                     <td>5</td>
-                    <td><a href="beatle.html">TL$ Beatle</a></td>
+                    <td><a href="beatle.php">TL$ Beatle</a></td>
                     <td>Blusas</td>
                     <td>20</td>
                     <td>
@@ -165,7 +165,7 @@
                 </tr>
                 <tr>
                     <td>6</td>
-                    <td><a href="skull.html">TL$ Skull</a></td>
+                    <td><a href="skull.php">TL$ Skull</a></td>
                     <td>Camisas</td>
                     <td>20</td>
                     <td>

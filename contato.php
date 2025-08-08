@@ -19,23 +19,25 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="#">
+                <img src="imagens/logo.png" height=100 href="Logo">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="pagina1.html">Início</a>
+                        <a class="nav-link" href="pagina1.php">Início</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Produtos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="produtos.html">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Camisas</a></li>
+                            <li><a class="dropdown-item" href="#">Blusas</a></li>
+                            <li><a class="dropdown-item" href="#">Calças</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -57,7 +59,13 @@
             </div>
         </div>
     </nav>
-    
+    <section class="contact-section text-center py-5" style="background-color: #f8f9fa; border-radius: 10px; margin: 50px auto; max-width: 600px; padding: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h1 class="mb-4" style="color: #dc3545;">Entre em Contato</h1>
+        
+        <p class="lead"><i class="fas fa-phone-alt"></i> <strong>Telefone:</strong> (12) 00000-0000</p>
+        <p class="lead"><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://www.instagram.com/tl4_clothes" target="_blank">@tl4_clothes</a></p>
+        <p class="lead"><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:contato@tl4.com.br">contato@tl4.com.br</a></p>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
