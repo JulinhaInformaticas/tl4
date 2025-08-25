@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Centralizado</title>
+    <title>Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -39,7 +39,7 @@
         }
 
         .btn:hover {
-            background-color: red;
+            background-color: darkred;
         }
     </style>
 </head>
@@ -47,38 +47,33 @@
 
 <div class="form-container">
     <h2>Cadastro</h2>
-    <form action="">
+
+    <!-- Formulário envia os dados para processa_cadastro.php -->
+    <form action="processo_cadastro.php" method="POST">
         <div class="mb-3">
             <label for="nome" class="form-label">Nome:</label>
-            <input class="form-control" type="text" name="nome" id="nome">
+            <input class="form-control" type="text" name="nome" id="nome" required>
         </div>
         <div class="mb-3">
             <label for="sobrenome" class="form-label">Sobrenome:</label>
-            <input class="form-control" type="text" name="sobrenome" id="sobrenome">
+            <input class="form-control" type="text" name="sobrenome" id="sobrenome" required>
         </div>
         <div class="mb-3">
             <label for="telefone" class="form-label">Telefone:</label>
-            <input class="form-control" type="tel" name="telefone" id="telefone">
+            <input class="form-control" type="tel" name="telefone" id="telefone" required>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email:</label>
-            <input class="form-control" type="email" name="email" id="email">
+            <input class="form-control" type="email" name="email" id="email" required>
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Senha:</label>
-            <input class="form-control" type="password" name="password" id="password">
+            <input class="form-control" type="password" name="password" id="password" required>
         </div>
         <div class="d-grid">
-            <button class="btn" type="button" onclick="mensagem();">Cadastrar</button>
+            <button class="btn" type="submit">Cadastrar</button>
         </div>
     </form>
 </div>
-
-<script>
-    function mensagem() {
-        alert("Você se cadastrou no nosso sistema!");
-        window.location.href = "pagina1.php"; // Substitua "paginaDestino.php" pela URL desejada.
-    }
-</script>
 </body>
 </html>
